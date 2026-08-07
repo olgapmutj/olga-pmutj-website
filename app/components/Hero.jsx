@@ -2,58 +2,97 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="max-w-7xl mx-auto px-8 pt-36 pb-20 grid md:grid-cols-2 gap-16 items-center">
+    <section className="min-h-screen flex items-center bg-[#FAF7F2] pt-36 pb-24">
+      <div className="container">
+        <div className="grid lg:grid-cols-2 items-center gap-20">
 
-      <div>
-        <p className="uppercase tracking-[0.45em] text-gray-400 text-sm mb-5">
-          TIJUANA • MEXICO
-        </p>
+          {/* LEFT */}
 
-        <h1 className="text-6xl md:text-7xl font-light leading-tight mb-6">
-          Olga PMU TJ
-        </h1>
+          <div>
 
-        <h2 className="text-3xl text-gray-200 mb-8 leading-relaxed">
-          Restoring Confidence Through
-          <br />
-          Advanced Medical Tattooing
-        </h2>
+            <span className="uppercase tracking-[0.45em] text-sm text-[#B08D87]">
+              TIJUANA • MÉXICO
+            </span>
 
-        <p className="text-gray-400 text-lg leading-8 mb-10 max-w-xl">
-          Specialized in 3D Areola Restoration, Scar Camouflage,
-          Permanent Makeup and Paramedical Tattooing with natural,
-          elegant and life-changing results.
-        </p>
+            <h1 className="mt-6 text-6xl lg:text-8xl leading-[0.95] font-serif text-[#2D2A26]">
+              Restoring
+              <br />
+              Confidence.
+            </h1>
 
-        <div className="grid grid-cols-2 gap-4 text-gray-300 mb-12">
-          <div className="bg-zinc-900 rounded-xl p-4">✓ 3D Areola</div>
-          <div className="bg-zinc-900 rounded-xl p-4">✓ Scar Camouflage</div>
-          <div className="bg-zinc-900 rounded-xl p-4">✓ Medical Tattoo</div>
-          <div className="bg-zinc-900 rounded-xl p-4">✓ Permanent Makeup</div>
-        </div>
+            <p className="mt-10 max-w-xl text-xl leading-9 text-[#5F5854]">
+              Premium paramedical tattooing focused on restoring confidence
+              through advanced areola restoration, scar camouflage,
+              stretch mark camouflage and permanent makeup.
+            </p>
 
-        <div className="flex gap-5 flex-wrap">
-          <button className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-300 transition">
-            Book Consultation
-          </button>
+            <div className="mt-12 flex flex-wrap gap-5">
 
-          <button className="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition">
-            View Gallery
-          </button>
+              <a
+                href="#contact"
+                className="rounded-full bg-[#B08D87] px-8 py-4 text-white transition hover:bg-[#9B7872]"
+              >
+                Book Consultation
+              </a>
+
+              <a
+                href="#gallery"
+                className="rounded-full border border-[#B08D87] px-8 py-4 text-[#B08D87] transition hover:bg-[#B08D87] hover:text-white"
+              >
+                Before & After
+              </a>
+
+            </div>
+
+            <div className="grid grid-cols-2 gap-6 mt-16">
+
+              <div className="rounded-3xl bg-white p-6 shadow-md">
+
+                <h3 className="text-lg font-semibold text-[#2D2A26]">
+                  3D Areola
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#6D6662]">
+                  Natural restoration after mastectomy.
+                </p>
+
+              </div>
+
+              <div className="rounded-3xl bg-white p-6 shadow-md">
+
+                <h3 className="text-lg font-semibold text-[#2D2A26]">
+                  Scar Camouflage
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#6D6662]">
+                  Blend scars naturally with surrounding skin.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT */}
+
+          <div className="relative flex justify-center">
+
+            <div className="absolute top-8 left-8 w-full h-full rounded-[45px] bg-[#EAD8D3]" />
+
+            <Image
+              src="/images/hero/olga-hero.jpg"
+              alt="Olga PMU TJ"
+              width={650}
+              height={850}
+              priority
+              className="relative w-full max-w-[620px] rounded-[45px] object-cover shadow-2xl"
+            />
+
+          </div>
+
         </div>
       </div>
-
-      <div>
-        <Image
-          src="/images/olga-hero.jpg"
-          alt="Olga PMU TJ"
-          width={800}
-          height={950}
-          priority
-          className="rounded-3xl shadow-2xl object-cover"
-        />
-      </div>
-
     </section>
   );
 }
