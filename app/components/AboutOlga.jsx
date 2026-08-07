@@ -2,26 +2,23 @@ import Image from "next/image";
 
 export default function AboutOlga() {
   return (
-    <section
-      id="about"
-      className="py-32 bg-white"
-    >
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="bg-white py-36">
+      <div className="container">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
 
           {/* IMAGE */}
 
           <div className="relative">
 
-            <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-[40px] bg-[#EAD8D3]" />
+            <div className="absolute top-8 left-8 w-full h-full rounded-[42px] bg-[#E8D6D1]" />
 
             <Image
               src="/images/about/olga-about.jpg"
               alt="Olga PMU TJ"
               width={700}
               height={900}
-              className="relative rounded-[40px] object-cover shadow-2xl"
+              className="relative rounded-[42px] shadow-2xl object-cover w-full"
             />
 
           </div>
@@ -30,36 +27,36 @@ export default function AboutOlga() {
 
           <div>
 
-            <span className="uppercase tracking-[0.4em] text-sm text-[#B08D87]">
+            <span className="uppercase tracking-[0.35em] text-sm text-[#B08D87]">
               ABOUT OLGA
             </span>
 
-            <h2 className="mt-6 text-5xl lg:text-6xl font-serif text-[#2D2A26]">
-              Expertise,
+            <h2 className="mt-6 text-6xl leading-tight font-serif text-[#2D2A26]">
+              Precision,
               <br />
-              Precision &
+              Compassion &
               <br />
-              Compassion
+              Confidence
             </h2>
 
-            <p className="mt-8 text-lg leading-9 text-[#66615E]">
-              Olga specializes in advanced paramedical tattooing,
-              helping patients regain confidence after surgery,
-              trauma and skin conditions through personalized
-              treatments with natural-looking results.
+            <p className="mt-8 text-lg leading-9 text-[#6D6662]">
+              Olga is a specialist in advanced paramedical tattooing,
+              combining medical precision with artistic excellence to
+              restore confidence after surgery, trauma and skin
+              conditions.
             </p>
 
-            <p className="mt-8 text-lg leading-9 text-[#66615E]">
-              Every procedure combines medical knowledge,
-              artistic precision and premium pigments to create
-              elegant and long-lasting outcomes.
+            <p className="mt-8 text-lg leading-9 text-[#6D6662]">
+              Every treatment is completely personalized, using
+              premium pigments and the latest techniques to create
+              elegant, natural-looking and long-lasting results.
             </p>
 
-            <div className="grid grid-cols-2 gap-8 mt-14">
+            <div className="grid grid-cols-2 gap-10 mt-16">
 
               <div>
 
-                <h3 className="text-5xl font-serif text-[#B08D87]">
+                <h3 className="text-6xl font-serif text-[#B08D87]">
                   8+
                 </h3>
 
@@ -71,17 +68,24 @@ export default function AboutOlga() {
 
               <div>
 
-                <h3 className="text-5xl font-serif text-[#B08D87]">
+                <h3 className="text-6xl font-serif text-[#B08D87]">
                   1000+
                 </h3>
 
                 <p className="mt-2 text-[#6D6662]">
-                  Procedures
+                  Successful Procedures
                 </p>
 
               </div>
 
             </div>
+
+            <a
+              href="#contact"
+              className="btn-primary mt-14"
+            >
+              Book Consultation
+            </a>
 
           </div>
 

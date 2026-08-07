@@ -1,24 +1,27 @@
 export default function Testimonials() {
-  const testimonials = [
+  const reviews = [
     {
-      name: "Sarah M.",
-      text: "Olga exceeded every expectation. My areola restoration looks incredibly natural and gave me my confidence back.",
+      name: "Maria S.",
+      treatment: "3D Areola Restoration",
+      review:
+        "Olga made me feel comfortable from the first consultation. The results exceeded my expectations.",
     },
     {
       name: "Jessica R.",
-      text: "Professional, caring and incredibly talented. The scar camouflage changed the way I see myself.",
+      treatment: "Scar Camouflage",
+      review:
+        "Professional, caring and incredibly talented. I finally feel confident wearing what I want.",
     },
     {
-      name: "Emily T.",
-      text: "The entire experience felt luxurious and personal. I couldn't be happier with my results.",
+      name: "Andrea T.",
+      treatment: "Permanent Makeup",
+      review:
+        "Beautiful natural results. The entire experience felt luxurious and personalized.",
     },
   ];
 
   return (
-    <section
-      id="reviews"
-      className="py-32 bg-[#FAF7F2]"
-    >
+    <section id="reviews" className="bg-[#FAF7F2] py-32">
       <div className="container">
 
         <div className="text-center max-w-3xl mx-auto mb-20">
@@ -27,32 +30,44 @@ export default function Testimonials() {
             TESTIMONIALS
           </span>
 
-          <h2 className="mt-6 text-5xl lg:text-6xl font-serif text-[#2D2A26]">
-            Loved by Our Clients
+          <h2 className="mt-6 font-serif text-6xl text-[#2D2A26]">
+            Patient Stories
           </h2>
+
+          <p className="mt-6 text-lg leading-8 text-[#6A635E]">
+            Every treatment is personal. Every result tells a story.
+          </p>
 
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
 
-          {testimonials.map((review, index) => (
+          {reviews.map((review) => (
 
             <div
-              key={index}
-              className="bg-white rounded-[32px] p-10 shadow-sm"
+              key={review.name}
+              className="rounded-[32px] bg-white p-10 shadow-lg"
             >
 
-              <div className="text-[#D6B15A] text-xl mb-6">
+              <div className="text-[#D7B55A] text-2xl">
                 ★★★★★
               </div>
 
-              <p className="leading-8 text-[#66615E]">
-                "{review.text}"
+              <p className="mt-8 leading-8 text-[#6A635E]">
+                "{review.review}"
               </p>
 
-              <h4 className="mt-8 font-semibold text-[#2D2A26]">
-                {review.name}
-              </h4>
+              <div className="mt-10">
+
+                <h4 className="font-semibold text-lg text-[#2D2A26]">
+                  {review.name}
+                </h4>
+
+                <p className="text-[#B08D87]">
+                  {review.treatment}
+                </p>
+
+              </div>
 
             </div>
 

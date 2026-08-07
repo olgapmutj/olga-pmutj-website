@@ -2,70 +2,86 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center bg-[#FAF7F2] pt-36 pb-24">
+    <section className="relative overflow-hidden bg-[#FAF7F2] pt-40 pb-28">
       <div className="container">
-        <div className="grid lg:grid-cols-2 items-center gap-20">
+
+        <div className="grid items-center gap-20 lg:grid-cols-2">
 
           {/* LEFT */}
 
-          <div>
+          <div className="max-w-xl">
 
-            <span className="uppercase tracking-[0.45em] text-sm text-[#B08D87]">
-              TIJUANA • MÉXICO
+            <span className="inline-block rounded-full bg-[#EAD8D3] px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#8E6F69]">
+              OLGA KOSHKINA
             </span>
 
-            <h1 className="mt-6 text-6xl lg:text-8xl leading-[0.95] font-serif text-[#2D2A26]">
-              Restoring
+            <h1 className="mt-8 font-serif text-6xl leading-[0.92] text-[#2D2A26] lg:text-8xl">
+              Medical Tattoo
               <br />
-              Confidence.
+              & Permanent
+              <br />
+              Makeup
             </h1>
 
-            <p className="mt-10 max-w-xl text-xl leading-9 text-[#5F5854]">
-              Premium paramedical tattooing focused on restoring confidence
-              through advanced areola restoration, scar camouflage,
-              stretch mark camouflage and permanent makeup.
+            <p className="mt-8 text-xl leading-9 text-[#6A635E]">
+              Olga Koshkina specializes in advanced medical tattooing,
+              including 3D Areola Restoration, Scar Camouflage,
+              Stretch Mark Camouflage and Permanent Makeup with elegant,
+              natural-looking results.
             </p>
 
             <div className="mt-12 flex flex-wrap gap-5">
 
               <a
                 href="#contact"
-                className="rounded-full bg-[#B08D87] px-8 py-4 text-white transition hover:bg-[#9B7872]"
+                className="btn-primary"
               >
-                Book Consultation
+                Schedule Consultation
               </a>
 
               <a
                 href="#gallery"
-                className="rounded-full border border-[#B08D87] px-8 py-4 text-[#B08D87] transition hover:bg-[#B08D87] hover:text-white"
+                className="btn-secondary"
               >
-                Before & After
+                View Results
               </a>
 
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mt-16">
+            <div className="mt-20 grid grid-cols-3 gap-8">
 
-              <div className="rounded-3xl bg-white p-6 shadow-md">
+              <div>
 
-                <h3 className="text-lg font-semibold text-[#2D2A26]">
-                  3D Areola
+                <h3 className="font-serif text-5xl text-[#B08D87]">
+                  8+
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-[#6D6662]">
-                  Natural restoration after mastectomy.
+                <p className="mt-2 text-sm text-[#6A635E]">
+                  Years Experience
                 </p>
 
               </div>
 
-              <div className="rounded-3xl bg-white p-6 shadow-md">
+              <div>
 
-                <h3 className="text-lg font-semibold text-[#2D2A26]">
-                  Scar Camouflage
+                <h3 className="font-serif text-5xl text-[#B08D87]">
+                  1000+
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-[#6D6662]">
-                  Blend scars naturally with surrounding skin.
+                <p className="mt-2 text-sm text-[#6A635E]">
+                  Procedures
+                </p>
+
+              </div>
+
+              <div>
+
+                <h3 className="font-serif text-5xl text-[#B08D87]">
+                  ★★★★★
+                </h3>
+
+                <p className="mt-2 text-sm text-[#6A635E]">
+                  Client Satisfaction
                 </p>
 
               </div>
@@ -76,22 +92,23 @@ export default function Hero() {
 
           {/* RIGHT */}
 
-          <div className="relative flex justify-center">
+          <div className="relative">
 
-            <div className="absolute top-8 left-8 w-full h-full rounded-[45px] bg-[#EAD8D3]" />
+            <div className="absolute -right-8 -bottom-8 h-full w-full rounded-[48px] bg-[#E7D4CF]" />
 
             <Image
               src="/images/hero/olga-hero.jpg"
-              alt="Olga PMU TJ"
-              width={650}
-              height={850}
+              alt="Olga Koshkina"
+              width={780}
+              height={980}
               priority
-              className="relative w-full max-w-[620px] rounded-[45px] object-cover shadow-2xl"
+              className="relative h-[760px] w-full rounded-[48px] object-cover shadow-2xl"
             />
 
           </div>
 
         </div>
+
       </div>
     </section>
   );
