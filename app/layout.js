@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 
@@ -15,7 +16,8 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://olgapmutj.com"),
 
-  title: "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
+  title:
+    "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
 
   description:
     "Premium paramedical tattoo studio in Tijuana specializing in 3D Areola Restoration, Scar Camouflage, Stretch Mark Camouflage and Permanent Makeup.",
@@ -34,7 +36,8 @@ export const metadata = {
   authors: [{ name: "Olga Koshkina" }],
 
   openGraph: {
-    title: "Olga Koshkina | Medical Tattoo & Permanent Makeup",
+    title:
+      "Olga Koshkina | Medical Tattoo & Permanent Makeup",
 
     description:
       "Premium Medical Tattoo & Permanent Makeup Studio in Tijuana.",
@@ -69,6 +72,8 @@ export default function RootLayout({ children }) {
         <LanguageProvider>
           {children}
         </LanguageProvider>
+
+        <Analytics />
       </body>
     </html>
   );
