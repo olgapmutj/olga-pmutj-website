@@ -1,9 +1,21 @@
+"use client";
+
 export default function WhatsAppButton() {
+  const handleWhatsAppClick = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "whatsapp_click", {
+        event_category: "engagement",
+        event_label: "WhatsApp Button",
+      });
+    }
+  };
+
   return (
     <a
       href="https://wa.me/526641350986"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleWhatsAppClick}
       className="fixed bottom-8 right-8 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition hover:scale-110"
       aria-label="WhatsApp"
     >
