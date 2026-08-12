@@ -107,6 +107,20 @@ export default function Contact() {
     }));
   }
 
+  function trackWhatsAppClick(buttonName, extraData = {}) {
+    if (
+      typeof window !== "undefined" &&
+      window.gtag
+    ) {
+      window.gtag("event", "whatsapp_click", {
+        button_name: buttonName,
+        link_url: "https://wa.me/526641350986",
+        page_location: window.location.href,
+        ...extraData,
+      });
+    }
+  }
+
   function openWhatsApp() {
     const treatment =
       form.treatment || current.recommendation;
@@ -131,6 +145,10 @@ export default function Contact() {
       "https://wa.me/526641350986?text=" +
       encodeURIComponent(message);
 
+    trackWhatsAppClick("Contact Form", {
+      treatment,
+    });
+
     window.location.href = whatsappUrl;
   }
 
@@ -149,6 +167,14 @@ export default function Contact() {
   const consultationWhatsApp =
     "https://wa.me/526641350986?text=" +
     encodeURIComponent(consultationMessage);
+
+  function handleDirectWhatsAppClick() {
+    trackWhatsAppClick("Contact WhatsApp");
+  }
+
+  function handleConsultationClick() {
+    trackWhatsAppClick("Contact Consultation");
+  }
 
   return (
     <section
@@ -222,6 +248,7 @@ export default function Contact() {
                   href={directWhatsApp}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleDirectWhatsAppClick}
                   className="mt-2 inline-block text-base text-[#B08D87] sm:text-lg"
                 >
                   +52 664 135 0986
@@ -238,6 +265,7 @@ export default function Contact() {
                 href={consultationWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleConsultationClick}
                 className="btn-primary inline-flex w-full justify-center sm:w-auto"
               >
                 {current.whatsapp}
