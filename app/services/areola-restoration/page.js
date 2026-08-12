@@ -5,7 +5,7 @@ export const metadata = {
   title: "3D Areola Restoration in Tijuana | Olga Koshkina",
 
   description:
-    "3D areola restoration and paramedical tattoo consultation in Tijuana with Olga Koshkina. Personalized restorative pigmentation focused on natural-looking visual results.",
+    "3D areola restoration and paramedical tattoo consultation in Tijuana with Olga Koshkina.",
 
   keywords: [
     "Areola Restoration Tijuana",
@@ -58,22 +58,22 @@ const faqs = [
   {
     question: "What is 3D areola restoration?",
     answer:
-      "3D areola restoration is a specialized form of paramedical tattooing that uses pigmentation and artistic shading techniques to recreate the visual appearance of an areola and create the impression of natural dimension.",
+      "3D areola restoration is a specialized form of paramedical tattooing that uses pigmentation, color and shading techniques to recreate the visual appearance of a natural areola.",
   },
   {
-    question: "Who can consider areola restoration?",
+    question: "Who may consider this service?",
     answer:
-      "People who have experienced changes to the appearance of the areola following breast surgery, reconstruction or other circumstances may consider a consultation to determine whether this service is appropriate for their individual situation.",
+      "People who have experienced changes to the appearance of the areola following surgery, reconstruction or other circumstances may consider a consultation.",
   },
   {
-    question: "Does every client receive the same design?",
+    question: "Is every treatment personalized?",
     answer:
-      "No. The approach is personalized to the individual. Skin tone, existing pigmentation, the treatment area, previous procedures and the desired aesthetic result are considered during the consultation.",
+      "Yes. Skin tone, existing pigmentation, the treatment area, previous procedures and the desired aesthetic result are considered during the consultation.",
   },
   {
     question: "Is a consultation required?",
     answer:
-      "A consultation is recommended before treatment so the treatment area, expectations, previous procedures and appropriate approach can be discussed.",
+      "A consultation is recommended before treatment so the treatment area, expectations and appropriate approach can be discussed.",
   },
   {
     question: "Where is the service available?",
@@ -137,54 +137,55 @@ export default function AreolaRestorationPage() {
 
         {/* HERO */}
 
-        <section className="w-full py-16 sm:py-20 lg:py-28">
-          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10">
+        <section className="w-full py-14 sm:py-20 lg:py-24">
+          <div className="mx-auto w-full max-w-[1380px] px-6 sm:px-8 lg:px-12">
 
-            <div className="grid w-full min-w-0 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+            <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
 
-              {/* TEXT */}
+              <div className="min-w-0 max-w-[620px]">
 
-              <div className="min-w-0 max-w-xl">
-
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#B08D87]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.38em] text-[#B08D87] sm:text-xs">
                   3D Areola Restoration • Tijuana
                 </p>
 
-                <h1 className="mt-6 break-words font-serif text-5xl leading-[0.98] tracking-[-0.04em] text-[#2D2A26] sm:text-6xl lg:text-7xl">
-                  3D Areola
+                <h1 className="mt-6 font-serif text-[48px] leading-[0.94] tracking-[-0.045em] text-[#2D2A26] sm:text-6xl lg:text-[76px]">
+                  Restoring
                   <br />
                   <span className="text-[#B08D87]">
-                    Restoration
+                    confidence
                   </span>
+                  <br />
+                  through artistry.
                 </h1>
 
-                <p className="mt-8 max-w-xl text-base leading-8 text-[#6A635E] sm:text-lg">
-                  Specialized paramedical tattooing designed to recreate the
-                  visual appearance of an areola through carefully considered
-                  pigmentation, color and dimension.
+                <p className="mt-7 max-w-[540px] text-base leading-7 text-[#6A635E] sm:mt-8 sm:text-lg sm:leading-8">
+                  3D areola restoration is a specialized form of paramedical
+                  tattooing designed to recreate the visual appearance of a
+                  natural areola through carefully considered color, shape and
+                  dimension.
                 </p>
 
-                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
 
                   <a
                     href="https://wa.me/526641350986"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-[#B08D87] px-7 py-4 text-sm font-medium text-white transition hover:bg-[#96716B]"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#B08D87] px-7 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#96716B]"
                   >
                     Schedule a Consultation
                   </a>
 
                   <Link
                     href="/services/medical-tattoo"
-                    className="inline-flex items-center justify-center rounded-full border border-[#D8C9C3] bg-transparent px-7 py-4 text-sm font-medium text-[#4F4945] transition hover:border-[#B08D87] hover:bg-white"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D8C9C3] px-7 text-sm font-medium text-[#4F4945] transition duration-300 hover:border-[#B08D87] hover:bg-white"
                   >
                     Medical Tattoo
                   </Link>
 
                 </div>
 
-                <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-[#8A817C]">
+                <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#8A817C]">
                   <span>Personalized</span>
                   <span>Paramedical</span>
                   <span>Tijuana</span>
@@ -192,24 +193,24 @@ export default function AreolaRestorationPage() {
 
               </div>
 
-              {/* IMAGE */}
+              <div className="relative min-w-0 lg:pl-4">
 
-              <div className="relative min-w-0 w-full">
+                <div className="absolute -bottom-6 -left-4 h-[88%] w-[88%] rounded-[38px] bg-[#E8D8D2] sm:-left-6" />
 
-                <div className="absolute -bottom-5 -left-5 h-full w-full rounded-[36px] bg-[#E8D8D2]" />
-
-                <div className="relative aspect-[4/4.5] w-full overflow-hidden rounded-[36px] bg-[#E5DED8] shadow-[0_30px_70px_rgba(0,0,0,0.10)]">
+                <div className="relative ml-auto aspect-[0.92] w-full max-w-[650px] overflow-hidden rounded-[38px] bg-[#E5DED8] shadow-[0_30px_80px_rgba(45,42,38,0.13)]">
 
                   <Image
                     src="/images/working/olga-working-03.jpg"
-                    alt="Olga Koshkina performing paramedical tattoo work in Tijuana"
+                    alt="Olga Koshkina performing paramedical tattoo work"
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 52vw"
                     className="object-cover"
                   />
 
-                  <div className="absolute bottom-5 left-5 rounded-full bg-white/95 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4F4945] shadow-sm backdrop-blur">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+
+                  <div className="absolute bottom-6 left-6 rounded-full bg-white/95 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4F4945] shadow-sm">
                     Paramedical Tattooing
                   </div>
 
@@ -238,9 +239,8 @@ export default function AreolaRestorationPage() {
               <div className="min-w-0 max-w-3xl">
 
                 <h2 className="font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-[#2D2A26] sm:text-5xl lg:text-6xl">
-                  A personalized approach to
+                  A personalized approach to{" "}
                   <span className="text-[#B08D87]">
-                    {" "}
                     restoration.
                   </span>
                 </h2>
@@ -248,15 +248,13 @@ export default function AreolaRestorationPage() {
                 <p className="mt-7 text-base leading-8 text-[#6A635E] sm:text-lg">
                   Changes to the appearance of the breast and areola can happen
                   for many different reasons, including surgery and breast
-                  reconstruction. Paramedical tattooing can be used to recreate
-                  the visual appearance of an areola and add the impression of
-                  natural dimension.
+                  reconstruction.
                 </p>
 
                 <p className="mt-5 text-base leading-8 text-[#6A635E] sm:text-lg">
-                  Each treatment is approached individually. Color, shape,
-                  placement and pigmentation are considered according to the
-                  person's skin, treatment area and desired aesthetic result.
+                  Paramedical tattooing can recreate the visual appearance of an
+                  areola using personalized color, shape and pigmentation
+                  techniques.
                 </p>
 
               </div>
@@ -265,7 +263,7 @@ export default function AreolaRestorationPage() {
           </div>
         </section>
 
-        {/* WHAT IT INVOLVES */}
+        {/* PROCESS */}
 
         <section className="w-full bg-[#F8F4F0] py-20 sm:py-24 lg:py-28">
 
@@ -278,10 +276,9 @@ export default function AreolaRestorationPage() {
               </p>
 
               <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-[#2D2A26] sm:text-5xl lg:text-6xl">
-                What to expect
+                What to expect from the{" "}
                 <span className="text-[#B08D87]">
-                  {" "}
-                  from the consultation.
+                  consultation.
                 </span>
               </h2>
 
@@ -289,7 +286,7 @@ export default function AreolaRestorationPage() {
 
             <div className="mt-14 grid w-full min-w-0 grid-cols-1 gap-5 md:grid-cols-3">
 
-              <article className="min-w-0 rounded-[28px] border border-[#E8DED8] bg-white p-8">
+              <article className="min-w-0 rounded-[28px] border border-[#E8DED8] bg-white p-8 shadow-sm">
 
                 <span className="text-xs font-semibold tracking-[0.2em] text-[#B08D87]">
                   01
@@ -300,13 +297,13 @@ export default function AreolaRestorationPage() {
                 </h3>
 
                 <p className="mt-4 text-base leading-7 text-[#6D6662]">
-                  Discuss the treatment area, previous procedures, expectations
-                  and the desired aesthetic result.
+                  Discuss the treatment area, previous procedures,
+                  expectations and desired aesthetic result.
                 </p>
 
               </article>
 
-              <article className="min-w-0 rounded-[28px] border border-[#E8DED8] bg-white p-8">
+              <article className="min-w-0 rounded-[28px] border border-[#E8DED8] bg-white p-8 shadow-sm">
 
                 <span className="text-xs font-semibold tracking-[0.2em] text-[#B08D87]">
                   02
@@ -323,7 +320,7 @@ export default function AreolaRestorationPage() {
 
               </article>
 
-              <article className="min-w-0 rounded-[28px] border border-[#E8DED8] bg-white p-8">
+              <article className="min-w-0 rounded-[28px] border border-[#E8DED8] bg-white p-8 shadow-sm">
 
                 <span className="text-xs font-semibold tracking-[0.2em] text-[#B08D87]">
                   03
@@ -334,8 +331,8 @@ export default function AreolaRestorationPage() {
                 </h3>
 
                 <p className="mt-4 text-base leading-7 text-[#6D6662]">
-                  The procedure is performed using specialized pigmentation
-                  techniques selected for the individual case.
+                  Specialized pigmentation techniques are selected according to
+                  the individual case.
                 </p>
 
               </article>
@@ -344,7 +341,7 @@ export default function AreolaRestorationPage() {
           </div>
         </section>
 
-        {/* IMPORTANT NOTE */}
+        {/* PERSONALIZED ASSESSMENT */}
 
         <section className="w-full bg-[#FAF7F2] py-20 sm:py-24 lg:py-28">
 
@@ -381,9 +378,8 @@ export default function AreolaRestorationPage() {
               </p>
 
               <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-[#2D2A26] sm:text-5xl">
-                Questions about
+                Questions about{" "}
                 <span className="text-[#B08D87]">
-                  {" "}
                   areola restoration.
                 </span>
               </h2>
@@ -404,6 +400,7 @@ export default function AreolaRestorationPage() {
                     <span className="shrink-0 text-2xl font-light text-[#B08D87] transition group-open:rotate-45">
                       +
                     </span>
+
                   </summary>
 
                   <p className="mt-4 max-w-3xl pr-8 text-base leading-7 text-[#6D6662]">
@@ -431,9 +428,8 @@ export default function AreolaRestorationPage() {
             </p>
 
             <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
-              Start with a
+              Start with a{" "}
               <span className="text-[#C5A7A3]">
-                {" "}
                 consultation.
               </span>
             </h2>
@@ -443,27 +439,20 @@ export default function AreolaRestorationPage() {
               the next step for your individual situation.
             </p>
 
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-9 flex justify-center">
 
               <a
                 href="https://wa.me/526641350986"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#B08D87] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#C5A7A3] sm:w-auto"
+                className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-[#B08D87] px-9 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#C5A7A3]"
               >
                 Contact Olga on WhatsApp
               </a>
 
-              <Link
-                href="/services/medical-tattoo"
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10 sm:w-auto"
-              >
-                Back to Medical Tattoo
-              </Link>
-
             </div>
 
-            <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/40">
+            <p className="mt-7 text-xs uppercase tracking-[0.18em] text-white/40">
               Tijuana, Baja California, Mexico
             </p>
 
@@ -499,6 +488,7 @@ export default function AreolaRestorationPage() {
             </div>
 
           </div>
+
         </footer>
 
       </main>
