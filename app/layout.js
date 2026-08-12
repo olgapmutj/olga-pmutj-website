@@ -14,36 +14,57 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
 });
 
-export const metadata = {
-  metadataBase: new URL("https://olga-pmutj-website.vercel.app"),
+const siteUrl = "https://olga-pmutj-website.vercel.app";
 
-  title:
-    "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
+export const metadata = {
+  metadataBase: new URL(siteUrl),
+
+  title: {
+    default:
+      "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
+    template: "%s | Olga Koshkina",
+  },
 
   description:
-    "Premium paramedical tattoo studio in Tijuana specializing in 3D Areola Restoration, Scar Camouflage, Stretch Mark Camouflage and Permanent Makeup.",
+    "Olga Koshkina is a medical tattoo and permanent makeup specialist in Tijuana, specializing in 3D areola restoration, scar camouflage, stretch mark camouflage and advanced micropigmentation.",
 
   keywords: [
+    "Medical Tattoo Tijuana",
+    "Paramedical Tattoo Tijuana",
+    "Areola Restoration Tijuana",
+    "Scar Camouflage Tijuana",
+    "Stretch Mark Camouflage Tijuana",
+    "Permanent Makeup Tijuana",
+    "Micropigmentation Tijuana",
     "Medical Tattoo",
     "Paramedical Tattoo",
     "Areola Restoration",
     "Scar Camouflage",
     "Permanent Makeup",
-    "Tijuana",
     "Micropigmentation",
-    "PMU",
+    "PMU Tijuana",
   ],
 
-  authors: [{ name: "Olga Koshkina" }],
+  authors: [
+    {
+      name: "Olga Koshkina",
+    },
+  ],
+
+  creator: "Olga Koshkina",
+
+  alternates: {
+    canonical: siteUrl,
+  },
 
   openGraph: {
     title:
-      "Olga Koshkina | Medical Tattoo & Permanent Makeup",
+      "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
 
     description:
-      "Premium Medical Tattoo & Permanent Makeup Studio in Tijuana.",
+      "Premium medical tattoo and permanent makeup studio in Tijuana specializing in areola restoration, scar camouflage and advanced micropigmentation.",
 
-    url: "https://olga-pmutj-website.vercel.app",
+    url: siteUrl,
 
     siteName: "Olga Koshkina",
 
@@ -52,6 +73,7 @@ export const metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        alt: "Olga Koshkina Medical Tattoo & Permanent Makeup",
       },
     ],
 
@@ -59,22 +81,43 @@ export const metadata = {
     type: "website",
   },
 
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
+
+    description:
+      "Medical tattoo, areola restoration, scar camouflage and advanced micropigmentation in Tijuana.",
+
+    images: ["/og-image.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
   icons: {
     icon: "/favicon.ico",
   },
 
   verification: {
-    google:
-      "CtPQwvFlOPbeV_qCG9Mt-RumCY2MmIPyAW5HjvR7Bg4",
+    google: "CtPQwvFlOPbeV_qCG9Mt-RumCY2MmIPyAW5HjvR7Bg4",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable}`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>
@@ -86,13 +129,14 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
 
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-        >
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+              window.dataLayer.push(arguments);
+            }
+
             gtag('js', new Date());
             gtag('config', 'G-JM8DPN4448');
           `}
