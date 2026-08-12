@@ -5,22 +5,10 @@ import { useLanguage } from "../context/LanguageContext";
 export default function Hero() {
   const { t } = useLanguage();
 
-  const handleWhatsAppClick = () => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "whatsapp_click", {
-        button_name: "Hero",
-        link_url: "https://wa.me/526641350986",
-        page_location: window.location.href,
-      });
-    }
-  };
-
   return (
     <section className="w-full overflow-hidden bg-[#FAF7F2]">
       <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 lg:px-8 lg:pb-32 lg:pt-40">
         <div className="grid w-full items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-
-          {/* LEFT */}
 
           <div className="min-w-0">
             <span className="text-[8px] font-semibold uppercase tracking-[0.25em] text-[#B08D87] sm:text-xs sm:tracking-[0.35em]">
@@ -39,14 +27,11 @@ export default function Hero() {
               {t.hero.description}
             </p>
 
-            {/* BUTTONS */}
-
             <div className="mt-6 flex flex-wrap gap-3 sm:mt-10">
               <a
                 href="https://wa.me/526641350986"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleWhatsAppClick}
                 className="btn-primary px-6 py-3 text-[12px] sm:px-8 sm:py-4 sm:text-sm"
               >
                 {t.hero.primary}
@@ -59,8 +44,6 @@ export default function Hero() {
                 {t.hero.secondary}
               </a>
             </div>
-
-            {/* STATS */}
 
             <div className="mt-8 grid grid-cols-3 gap-2 border-t border-[#E8DED8] pt-5 sm:mt-12 sm:gap-8 sm:pt-6">
               <div className="min-w-0">
@@ -94,8 +77,6 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
-          {/* VIDEO */}
 
           <div className="relative mt-2 w-full min-w-0 lg:mt-0">
             <div className="absolute -bottom-3 -left-3 h-full w-full rounded-[26px] bg-[#E7D4CF] sm:-bottom-6 sm:-left-6 sm:rounded-[42px]" />
