@@ -1,11 +1,10 @@
-"use client";
-
 export default function WhatsAppButton() {
   const handleWhatsAppClick = () => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "whatsapp_click", {
-        event_category: "engagement",
-        event_label: "WhatsApp Button",
+        button_name: "WhatsApp",
+        link_url: "https://wa.me/526641350986",
+        page_location: window.location.href,
       });
     }
   };
