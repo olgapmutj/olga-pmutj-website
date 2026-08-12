@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -13,45 +14,36 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
 });
 
-const siteUrl = "https://olga-pmutj-website.vercel.app";
-
 export const metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL("https://olga-pmutj-website.vercel.app"),
 
   title:
-    "Olga Koshkina | Medical Tattoo & Permanent Makeup in Tijuana",
+    "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
 
   description:
-    "Olga Koshkina specializes in paramedical tattoo and permanent makeup in Tijuana, including 3D areola restoration, scar camouflage, stretch mark camouflage and natural-looking PMU results.",
+    "Premium paramedical tattoo studio in Tijuana specializing in 3D Areola Restoration, Scar Camouflage, Stretch Mark Camouflage and Permanent Makeup.",
 
   keywords: [
-    "Medical Tattoo Tijuana",
-    "Paramedical Tattoo Tijuana",
-    "Areola Restoration Tijuana",
-    "3D Areola Restoration",
-    "Scar Camouflage Tijuana",
-    "Stretch Mark Camouflage Tijuana",
-    "Permanent Makeup Tijuana",
-    "PMU Tijuana",
-    "Micropigmentation Tijuana",
-    "Olga Koshkina",
+    "Medical Tattoo",
+    "Paramedical Tattoo",
+    "Areola Restoration",
+    "Scar Camouflage",
+    "Permanent Makeup",
+    "Tijuana",
+    "Micropigmentation",
+    "PMU",
   ],
 
   authors: [{ name: "Olga Koshkina" }],
 
-  robots: {
-    index: true,
-    follow: true,
-  },
-
   openGraph: {
     title:
-      "Olga Koshkina | Medical Tattoo & Permanent Makeup in Tijuana",
+      "Olga Koshkina | Medical Tattoo & Permanent Makeup",
 
     description:
-      "Premium paramedical tattoo and permanent makeup services in Tijuana, specializing in 3D areola restoration, scar camouflage and natural-looking results.",
+      "Premium Medical Tattoo & Permanent Makeup Studio in Tijuana.",
 
-    url: siteUrl,
+    url: "https://olga-pmutj-website.vercel.app",
 
     siteName: "Olga Koshkina",
 
@@ -72,52 +64,39 @@ export const metadata = {
   },
 
   verification: {
-    google: "CtPQwvFlOPbeV_qCG9Mt-RumCY2MmIPyAW5HjvR7Bg4",
+    google:
+      "CtPQwvFlOPbeV_qCG9Mt-RumCY2MmIPyAW5HjvR7Bg4",
   },
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Olga Koshkina",
-  description:
-    "Paramedical tattoo and permanent makeup studio in Tijuana specializing in 3D areola restoration, scar camouflage, stretch mark camouflage and permanent makeup.",
-  url: siteUrl,
-  telephone: "+52 664 135 0986",
-
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Parque Baja California Sur 478",
-    addressLocality: "Tijuana",
-    addressRegion: "Baja California",
-    postalCode: "22506",
-    addressCountry: "MX",
-  },
-
-  areaServed: {
-    "@type": "City",
-    name: "Tijuana",
-  },
-
-  priceRange: "$$",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable}`}
+      >
         <LanguageProvider>
           {children}
         </LanguageProvider>
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
+        <Analytics />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JM8DPN4448"
+          strategy="afterInteractive"
         />
 
-        <Analytics />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JM8DPN4448');
+          `}
+        </Script>
       </body>
     </html>
   );
