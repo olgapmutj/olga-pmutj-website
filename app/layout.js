@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://olgapmutj.com"),
+  metadataBase: new URL("https://olga-pmutj-website.vercel.app"),
 
   title:
     "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
@@ -42,7 +42,7 @@ export const metadata = {
     description:
       "Premium Medical Tattoo & Permanent Makeup Studio in Tijuana.",
 
-    url: "https://olgapmutj.com",
+    url: "https://olga-pmutj-website.vercel.app",
 
     siteName: "Olga Koshkina",
 
@@ -60,6 +60,11 @@ export const metadata = {
 
   icons: {
     icon: "/favicon.ico",
+  },
+
+  verification: {
+    google:
+      "CtPQwvFlOPbeV_qCG9Mt-RumCY2MmIPyAW5HjvR7Bg4",
   },
 };
 
