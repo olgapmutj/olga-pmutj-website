@@ -5,17 +5,24 @@ import { useLanguage } from "../context/LanguageContext";
 export default function Hero() {
   const { t } = useLanguage();
 
+  const handleWhatsAppClick = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "whatsapp_click", {
+        button_name: "Hero",
+        link_url: "https://wa.me/526641350986",
+        page_location: window.location.href,
+      });
+    }
+  };
+
   return (
     <section className="w-full overflow-hidden bg-[#FAF7F2]">
-
       <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 lg:px-8 lg:pb-32 lg:pt-40">
-
         <div className="grid w-full items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
           {/* LEFT */}
 
           <div className="min-w-0">
-
             <span className="text-[8px] font-semibold uppercase tracking-[0.25em] text-[#B08D87] sm:text-xs sm:tracking-[0.35em]">
               {t.hero.eyebrow}
             </span>
@@ -35,9 +42,11 @@ export default function Hero() {
             {/* BUTTONS */}
 
             <div className="mt-6 flex flex-wrap gap-3 sm:mt-10">
-
               <a
-                href="#contact"
+                href="https://wa.me/526641350986"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
                 className="btn-primary px-6 py-3 text-[12px] sm:px-8 sm:py-4 sm:text-sm"
               >
                 {t.hero.primary}
@@ -49,15 +58,12 @@ export default function Hero() {
               >
                 {t.hero.secondary}
               </a>
-
             </div>
 
             {/* STATS */}
 
             <div className="mt-8 grid grid-cols-3 gap-2 border-t border-[#E8DED8] pt-5 sm:mt-12 sm:gap-8 sm:pt-6">
-
               <div className="min-w-0">
-
                 <p className="font-serif text-[26px] leading-none text-[#B08D87] sm:text-3xl">
                   8+
                 </p>
@@ -65,11 +71,9 @@ export default function Hero() {
                 <p className="mt-1.5 text-[7px] uppercase leading-4 tracking-[0.08em] text-[#6A635E] sm:text-xs sm:tracking-wider">
                   {t.hero.experience}
                 </p>
-
               </div>
 
               <div className="min-w-0">
-
                 <p className="font-serif text-[26px] leading-none text-[#B08D87] sm:text-3xl">
                   1000+
                 </p>
@@ -77,11 +81,9 @@ export default function Hero() {
                 <p className="mt-1.5 text-[7px] uppercase leading-4 tracking-[0.08em] text-[#6A635E] sm:text-xs sm:tracking-wider">
                   {t.hero.procedures}
                 </p>
-
               </div>
 
               <div className="min-w-0">
-
                 <p className="font-serif text-[20px] leading-none text-[#B08D87] sm:text-3xl">
                   Tijuana
                 </p>
@@ -89,21 +91,16 @@ export default function Hero() {
                 <p className="mt-1.5 text-[7px] uppercase leading-4 tracking-[0.08em] text-[#6A635E] sm:text-xs sm:tracking-wider">
                   {t.hero.location}
                 </p>
-
               </div>
-
             </div>
-
           </div>
 
           {/* VIDEO */}
 
           <div className="relative mt-2 w-full min-w-0 lg:mt-0">
-
             <div className="absolute -bottom-3 -left-3 h-full w-full rounded-[26px] bg-[#E7D4CF] sm:-bottom-6 sm:-left-6 sm:rounded-[42px]" />
 
             <div className="relative w-full overflow-hidden rounded-[26px] shadow-2xl sm:rounded-[42px]">
-
               <video
                 autoPlay
                 muted
@@ -123,15 +120,11 @@ export default function Hero() {
               <div className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1.5 text-[7px] font-medium uppercase tracking-[0.12em] text-[#4F4945] backdrop-blur sm:bottom-6 sm:left-6 sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.18em]">
                 {t.hero.badge}
               </div>
-
             </div>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }
