@@ -2,18 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title:
-    "Medical Tattoo & Paramedical Tattoo in Tijuana | Olga Koshkina",
+  title: "Medical Tattoo & Paramedical Tattoo in Tijuana | Olga Koshkina",
 
   description:
-    "Advanced paramedical tattooing in Tijuana by Olga Koshkina, specializing in restorative and medical tattoo techniques for skin affected by surgery, scars and medical conditions.",
+    "Advanced paramedical tattooing in Tijuana by Olga Koshkina, specializing in 3D areola restoration, scar camouflage, vitiligo camouflage and restorative tattooing.",
 
   keywords: [
     "Medical Tattoo Tijuana",
     "Paramedical Tattoo Tijuana",
     "Medical Tattoo Artist Tijuana",
     "Paramedical Tattoo Artist Tijuana",
-    "Areola Restoration Tijuana",
+    "3D Areola Restoration Tijuana",
     "Scar Camouflage Tijuana",
     "Vitiligo Camouflage Tijuana",
     "Olga Koshkina",
@@ -26,17 +25,11 @@ export const metadata = {
   },
 
   openGraph: {
-    title:
-      "Medical Tattoo & Paramedical Tattoo in Tijuana | Olga Koshkina",
-
+    title: "Medical Tattoo & Paramedical Tattoo in Tijuana | Olga Koshkina",
     description:
       "Advanced paramedical tattooing in Tijuana by Olga Koshkina.",
-
-    url:
-      "https://olga-pmutj-website.vercel.app/services/medical-tattoo",
-
+    url: "https://olga-pmutj-website.vercel.app/services/medical-tattoo",
     siteName: "Olga Koshkina",
-
     images: [
       {
         url: "/images/working/olga-working-03.jpg",
@@ -45,7 +38,6 @@ export const metadata = {
         alt: "Olga Koshkina performing paramedical tattooing",
       },
     ],
-
     locale: "en_US",
     type: "website",
   },
@@ -56,30 +48,30 @@ export const metadata = {
   },
 };
 
-const medicalTattooServices = [
+const services = [
   {
+    number: "01",
     title: "3D Areola Restoration",
     description:
-      "Paramedical tattooing designed to recreate the visual appearance of a natural areola and nipple through specialized pigmentation techniques.",
-    href: "/services/areola-restoration",
+      "Specialized paramedical pigmentation designed to recreate the visual appearance of a natural areola with dimension, balance and carefully matched tones.",
   },
   {
+    number: "02",
     title: "Scar Camouflage",
     description:
-      "Specialized pigmentation techniques designed to visually reduce the contrast between a scar and the surrounding skin.",
-    href: "/services/scar-camouflage",
+      "Customized pigmentation designed to visually soften the contrast between scars and the surrounding skin.",
   },
   {
+    number: "03",
     title: "Vitiligo Camouflage",
     description:
-      "Customized pigmentation techniques intended to help visually blend areas of pigment loss with surrounding skin.",
-    href: "/services/vitiligo-camouflage",
+      "Personalized pigmentation techniques designed to visually blend areas of pigment loss with surrounding skin.",
   },
   {
+    number: "04",
     title: "Paramedical Tattooing",
     description:
-      "Advanced tattooing techniques focused on restoring the appearance of skin affected by surgery, scars and medical conditions.",
-    href: "#consultation",
+      "Advanced restorative tattoo techniques for skin affected by surgery, scars and other medical conditions.",
   },
 ];
 
@@ -112,13 +104,11 @@ export default function MedicalTattooPage() {
         }}
       />
 
-      <main className="min-h-screen bg-[#FAF7F2] text-[#2D2A26]">
+      <main className="min-h-screen w-full overflow-x-hidden bg-[#FAF7F2] text-[#2D2A26]">
+        {/* HEADER */}
 
-        {/* NAVIGATION */}
-
-        <header className="border-b border-[#E8DED8] bg-[#FAF7F2]/95 backdrop-blur">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-
+        <header className="w-full border-b border-[#E8DED8] bg-[#FAF7F2]">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 sm:px-8 lg:px-10">
             <Link
               href="/"
               className="font-serif text-xl tracking-[-0.02em] text-[#2D2A26]"
@@ -132,442 +122,267 @@ export default function MedicalTattooPage() {
             >
               ← Back to Services
             </Link>
-
           </div>
         </header>
 
         {/* HERO */}
 
-        <section className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-8 lg:pb-28 lg:pt-24">
+        <section className="w-full py-16 sm:py-20 lg:py-28">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10">
+            <div className="grid w-full min-w-0 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+              {/* TEXT */}
 
-          <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+              <div className="min-w-0 max-w-xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#B08D87]">
+                  Medical Tattoo • Tijuana
+                </p>
 
-            <div>
+                <h1 className="mt-6 break-words font-serif text-5xl leading-[0.98] tracking-[-0.04em] text-[#2D2A26] sm:text-6xl lg:text-7xl">
+                  Medical Tattoo
+                  <br />
+                  <span className="text-[#B08D87]">
+                    & Paramedical Tattooing
+                  </span>
+                </h1>
 
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
-                Medical Tattoo • Tijuana
-              </p>
+                <p className="mt-8 max-w-xl text-base leading-8 text-[#6A635E] sm:text-lg">
+                  Advanced paramedical tattooing focused on restoring the
+                  appearance of skin affected by surgery, scars and medical
+                  conditions.
+                </p>
 
-              <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
-                Medical Tattoo &
-                <span className="block text-[#B08D87]">
-                  Paramedical Tattooing
-                </span>
-              </h1>
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="https://wa.me/526641350986"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full bg-[#B08D87] px-7 py-4 text-sm font-medium text-white transition hover:bg-[#96716B]"
+                  >
+                    Schedule a Consultation
+                  </a>
 
-              <p className="mt-8 max-w-xl text-lg leading-8 text-[#6A635E]">
-                Advanced paramedical tattooing focused on restoring the
-                appearance of skin affected by surgery, scars and medical
-                conditions.
-              </p>
-
-              <div className="mt-9 flex flex-wrap gap-4">
-
-                <a
-                  href="https://wa.me/526641350986"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-[#B08D87] px-7 py-4 text-sm font-medium text-white transition hover:bg-[#96716B]"
-                >
-                  Schedule a Consultation
-                </a>
-
-                <Link
-                  href="/#services"
-                  className="rounded-full border border-[#D8CBC5] px-7 py-4 text-sm font-medium text-[#4F4945] transition hover:bg-white"
-                >
-                  View All Services
-                </Link>
-
-              </div>
-
-            </div>
-
-            <div className="relative">
-
-              <div className="absolute -bottom-5 -left-5 h-full w-full rounded-[38px] bg-[#E7D4CF]" />
-
-              <div className="relative overflow-hidden rounded-[38px] shadow-2xl">
-
-                <Image
-                  src="/images/working/olga-working-03.jpg"
-                  alt="Olga Koshkina performing paramedical tattooing"
-                  width={800}
-                  height={900}
-                  priority
-                  className="h-[520px] w-full object-cover sm:h-[650px]"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-
-                <div className="absolute bottom-6 left-6 rounded-full bg-white/90 px-5 py-3 text-xs font-medium uppercase tracking-[0.16em] text-[#4F4945] backdrop-blur">
-                  Paramedical Tattooing
+                  <Link
+                    href="/#services"
+                    className="inline-flex items-center justify-center rounded-full border border-[#D8C9C3] bg-transparent px-7 py-4 text-sm font-medium text-[#4F4945] transition hover:border-[#B08D87] hover:bg-white"
+                  >
+                    View All Services
+                  </Link>
                 </div>
 
+                <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-[#8A817C]">
+                  <span>Restorative</span>
+                  <span>Precision</span>
+                  <span>Personalized</span>
+                </div>
               </div>
 
+              {/* IMAGE */}
+
+              <div className="relative min-w-0 w-full">
+                <div className="absolute -bottom-5 -left-5 h-full w-full rounded-[36px] bg-[#E8D8D2]" />
+
+                <div className="relative aspect-[4/4.5] w-full overflow-hidden rounded-[36px] bg-[#E5DED8] shadow-[0_30px_70px_rgba(0,0,0,0.10)]">
+                  <Image
+                    src="/images/working/olga-working-03.jpg"
+                    alt="Olga Koshkina performing paramedical tattooing"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+
+                  <div className="absolute bottom-5 left-5 rounded-full bg-white/95 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4F4945] shadow-sm backdrop-blur">
+                    Paramedical Tattooing
+                  </div>
+                </div>
+              </div>
             </div>
-
           </div>
-
         </section>
 
-        {/* INTRODUCTION */}
+        {/* INTRO */}
 
-        <section className="border-y border-[#E8DED8] bg-white">
+        <section className="w-full border-y border-[#E8DED8] bg-white py-20 sm:py-24 lg:py-28">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10">
+            <div className="grid w-full min-w-0 gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#B08D87]">
+                  Restorative Work
+                </p>
+              </div>
 
-          <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
+              <div className="min-w-0 max-w-3xl">
+                <h2 className="font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-[#2D2A26] sm:text-5xl lg:text-6xl">
+                  Restoring confidence through
+                  <span className="text-[#B08D87]">
+                    {" "}
+                    specialized artistry.
+                  </span>
+                </h2>
 
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
-              Restorative Work
-            </p>
+                <p className="mt-7 text-base leading-8 text-[#6A635E] sm:text-lg">
+                  Medical tattooing requires a different approach from
+                  conventional permanent makeup. Every treatment begins with
+                  understanding the skin, the history of the area and the
+                  desired result.
+                </p>
 
-            <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">
-              Restoring the appearance of skin
-              <span className="block text-[#B08D87]">
-                with precision and care
-              </span>
-            </h2>
-
-            <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-[#6A635E] lg:text-lg">
-              Medical tattooing, also known as paramedical tattooing, uses
-              specialized pigmentation techniques to address the visual
-              appearance of skin affected by surgery, scars and certain
-              medical conditions.
-            </p>
-
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#6A635E] lg:text-lg">
-              Each case is different. The approach depends on the area being
-              treated, the condition of the skin, previous procedures and the
-              desired aesthetic result.
-            </p>
-
+                <p className="mt-5 text-base leading-8 text-[#6A635E] sm:text-lg">
+                  Olga combines advanced pigmentation techniques with careful
+                  color selection and a highly personalized process designed
+                  around each individual client.
+                </p>
+              </div>
+            </div>
           </div>
-
         </section>
 
         {/* SERVICES */}
 
-        <section className="bg-[#F8F4F0] px-6 py-20 lg:py-28">
-
-          <div className="mx-auto max-w-6xl">
-
-            <div className="max-w-2xl">
-
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
+        <section className="w-full bg-[#F8F4F0] py-20 sm:py-24 lg:py-28">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10">
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#B08D87]">
                 Specialized Services
               </p>
 
-              <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">
-                Medical tattoo services
+              <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-[#2D2A26] sm:text-5xl lg:text-6xl">
+                Medical tattooing with
+                <span className="text-[#B08D87]"> purpose.</span>
               </h2>
-
-              <p className="mt-6 text-base leading-8 text-[#6A635E]">
-                Olga offers specialized paramedical tattoo services with an
-                individualized approach to each client and treatment area.
-              </p>
-
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-
-              {medicalTattooServices.map((service, index) => (
+            <div className="mt-14 grid w-full min-w-0 grid-cols-1 gap-5 md:grid-cols-2 lg:mt-16">
+              {services.map((service) => (
                 <article
-                  key={service.title}
-                  className="rounded-[28px] bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  key={service.number}
+                  className="min-w-0 rounded-[28px] border border-[#E8DED8] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-9"
                 >
+                  <div className="flex items-start justify-between gap-6">
+                    <span className="text-xs font-semibold tracking-[0.2em] text-[#B08D87]">
+                      {service.number}
+                    </span>
 
-                  <span className="font-serif text-2xl text-[#B08D87]">
-                    0{index + 1}
-                  </span>
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-[#B08D87]" />
+                  </div>
 
-                  <h3 className="mt-5 font-serif text-3xl text-[#2D2A26]">
+                  <h3 className="mt-8 font-serif text-3xl leading-[1.08] tracking-[-0.025em] text-[#2D2A26] sm:text-4xl">
                     {service.title}
                   </h3>
 
-                  <p className="mt-4 leading-7 text-[#6A635E]">
+                  <p className="mt-5 text-base leading-7 text-[#6D6662]">
                     {service.description}
                   </p>
-
-                  {service.href.startsWith("/") &&
-                  service.href !== "#consultation" ? (
-                    <Link
-                      href={service.href}
-                      className="mt-6 inline-flex text-sm font-medium text-[#B08D87] transition hover:text-[#96716B]"
-                    >
-                      Learn more →
-                    </Link>
-                  ) : (
-                    <a
-                      href="#consultation"
-                      className="mt-6 inline-flex text-sm font-medium text-[#B08D87] transition hover:text-[#96716B]"
-                    >
-                      Request a consultation →
-                    </a>
-                  )}
-
                 </article>
               ))}
-
             </div>
-
           </div>
-
         </section>
 
-        {/* PROCESS */}
+        {/* WHY OLGA */}
 
-        <section className="bg-[#FAF7F2] px-6 py-20 lg:py-28">
+        <section className="w-full bg-[#FAF7F2] py-20 sm:py-24 lg:py-28">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10">
+            <div className="grid w-full min-w-0 items-center gap-12 lg:grid-cols-2 lg:gap-24">
+              <div className="relative min-w-0 overflow-hidden rounded-[32px]">
+                <Image
+                  src="/images/working/olga-working-05.jpg"
+                  alt="Olga Koshkina performing professional tattoo work"
+                  width={800}
+                  height={900}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
 
-          <div className="mx-auto max-w-6xl">
+              <div className="min-w-0 max-w-xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#B08D87]">
+                  The Olga Koshkina Approach
+                </p>
 
-            <div className="mx-auto max-w-3xl text-center">
+                <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-[#2D2A26] sm:text-5xl">
+                  Precision matters when
+                  <span className="text-[#B08D87]"> restoration does.</span>
+                </h2>
 
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
-                The Approach
-              </p>
+                <div className="mt-8 space-y-5 text-base leading-8 text-[#6A635E]">
+                  <p>
+                    Each client receives an individualized assessment before
+                    treatment begins.
+                  </p>
 
-              <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">
-                Every case begins with a consultation
-              </h2>
+                  <p>
+                    Pigment selection, technique and design are approached
+                    according to the client's skin and the specific area being
+                    treated.
+                  </p>
 
-              <p className="mt-6 text-base leading-8 text-[#6A635E]">
-                A personalized consultation allows Olga to understand the
-                treatment area, review previous procedures and discuss the
-                client&apos;s goals before determining an appropriate approach.
-              </p>
-
+                  <p>
+                    The goal is not simply to perform a procedure. It is to
+                    create a result that feels natural, considered and
+                    personal.
+                  </p>
+                </div>
+              </div>
             </div>
-
-            <div className="mt-14 grid gap-6 md:grid-cols-3">
-
-              <div className="rounded-[28px] border border-[#E8DED8] bg-white p-8">
-
-                <span className="font-serif text-3xl text-[#B08D87]">
-                  01
-                </span>
-
-                <h3 className="mt-5 font-serif text-2xl">
-                  Consultation
-                </h3>
-
-                <p className="mt-4 leading-7 text-[#6A635E]">
-                  Discuss the area, previous procedures, skin condition and
-                  desired outcome.
-                </p>
-
-              </div>
-
-              <div className="rounded-[28px] border border-[#E8DED8] bg-white p-8">
-
-                <span className="font-serif text-3xl text-[#B08D87]">
-                  02
-                </span>
-
-                <h3 className="mt-5 font-serif text-2xl">
-                  Personalized Plan
-                </h3>
-
-                <p className="mt-4 leading-7 text-[#6A635E]">
-                  The technique, pigmentation approach and treatment plan are
-                  determined according to the individual case.
-                </p>
-
-              </div>
-
-              <div className="rounded-[28px] border border-[#E8DED8] bg-white p-8">
-
-                <span className="font-serif text-3xl text-[#B08D87]">
-                  03
-                </span>
-
-                <h3 className="mt-5 font-serif text-2xl">
-                  Treatment
-                </h3>
-
-                <p className="mt-4 leading-7 text-[#6A635E]">
-                  The procedure is performed using specialized equipment and
-                  pigmentation techniques appropriate to the treatment area.
-                </p>
-
-              </div>
-
-            </div>
-
           </div>
-
         </section>
 
-        {/* CREDENTIAL / EXPERIENCE */}
-
-        <section className="bg-white px-6 py-20 lg:py-28">
-
-          <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
-
-            <div>
-
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
-                Olga Koshkina
-              </p>
-
-              <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">
-                Experience, precision and specialized training
-              </h2>
-
-              <p className="mt-7 text-base leading-8 text-[#6A635E]">
-                Olga Koshkina is a micropigmentation specialist focused on
-                permanent makeup and paramedical tattooing. Her work combines
-                technical precision with an individualized approach to each
-                client.
-              </p>
-
-              <p className="mt-5 text-base leading-8 text-[#6A635E]">
-                Her services in Tijuana include medical tattooing, permanent
-                makeup and tattoo removal.
-              </p>
-
-              <Link
-                href="/#about"
-                className="mt-7 inline-flex text-sm font-medium text-[#B08D87] transition hover:text-[#96716B]"
-              >
-                Learn more about Olga →
-              </Link>
-
-            </div>
-
-            <div className="rounded-[32px] bg-[#F8F4F0] p-8 lg:p-12">
-
-              <div className="grid gap-8 sm:grid-cols-2">
-
-                <div>
-                  <p className="font-serif text-4xl text-[#B08D87]">
-                    8+
-                  </p>
-
-                  <p className="mt-2 text-sm uppercase tracking-[0.12em] text-[#6A635E]">
-                    Years of experience
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-serif text-4xl text-[#B08D87]">
-                    1000+
-                  </p>
-
-                  <p className="mt-2 text-sm uppercase tracking-[0.12em] text-[#6A635E]">
-                    Procedures
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-serif text-4xl text-[#B08D87]">
-                    TJ
-                  </p>
-
-                  <p className="mt-2 text-sm uppercase tracking-[0.12em] text-[#6A635E]">
-                    Tijuana, Mexico
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-serif text-4xl text-[#B08D87]">
-                    PMU
-                  </p>
-
-                  <p className="mt-2 text-sm uppercase tracking-[0.12em] text-[#6A635E]">
-                    Specialized work
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* CONSULTATION CTA */}
+        {/* CONSULTATION */}
 
         <section
           id="consultation"
-          className="bg-[#2D2A26] px-6 py-20 text-white lg:py-28"
+          className="w-full bg-[#2D2A26] py-20 sm:py-24 lg:py-28"
         >
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#D8BDB7]">
-              Tijuana • Medical Tattoo
+          <div className="mx-auto w-full max-w-5xl px-6 text-center sm:px-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#C5A7A3]">
+              Start With A Consultation
             </p>
 
-            <h2 className="mt-6 font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              Let&apos;s discuss your case
+            <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
+              Let's talk about your
+              <span className="text-[#C5A7A3]"> goals.</span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/70 lg:text-lg">
-              If you are considering medical or paramedical tattooing,
-              contact Olga to discuss your treatment area and determine the
-              next step.
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[#D8D0CB] sm:text-lg">
+              Contact Olga to discuss your needs, ask questions and determine
+              the most appropriate approach for your treatment.
             </p>
 
-            <a
-              href="https://wa.me/526641350986"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-9 inline-flex rounded-full bg-[#B08D87] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#C29B94]"
-            >
-              Contact Olga on WhatsApp
-            </a>
-
-            <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/40">
-              Tijuana, Baja California, Mexico
-            </p>
-
-          </div>
-
-        </section>
-
-        {/* FOOTER */}
-
-        <footer className="bg-[#FAF7F2] px-6 py-10">
-
-          <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[#6A635E] sm:flex-row sm:items-center sm:justify-between">
-
-            <p>
-              © {new Date().getFullYear()} Olga Koshkina
-            </p>
-
-            <div className="flex gap-6">
-
-              <Link
-                href="/"
-                className="transition hover:text-[#B08D87]"
-              >
-                Home
-              </Link>
-
-              <Link
-                href="/#services"
-                className="transition hover:text-[#B08D87]"
-              >
-                Services
-              </Link>
-
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href="https://wa.me/526641350986"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition hover:text-[#B08D87]"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#B08D87] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#C5A7A3] sm:w-auto"
               >
-                WhatsApp
+                Contact Olga on WhatsApp
               </a>
 
+              <Link
+                href="/"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10 sm:w-auto"
+              >
+                Return to Website
+              </Link>
             </div>
-
           </div>
+        </section>
 
+        {/* FOOTER */}
+
+        <footer className="w-full bg-[#FAF7F2]">
+          <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-8 text-xs text-[#8A817C] sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+            <span>© {new Date().getFullYear()} Olga Koshkina</span>
+
+            <Link
+              href="/"
+              className="transition hover:text-[#B08D87]"
+            >
+              Olga PMU TJ
+            </Link>
+          </div>
         </footer>
-
       </main>
     </>
   );
