@@ -1,3 +1,5 @@
+"use client";
+
 export default function WhatsAppButton() {
   const handleWhatsAppClick = () => {
     if (typeof window !== "undefined" && window.gtag) {
