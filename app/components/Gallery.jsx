@@ -4,68 +4,137 @@ import Image from "next/image";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { useLanguage } from "../context/LanguageContext";
 
 const images = [
-  "/images/gallery/gallery-1.jpg",
-  "/images/gallery/gallery-2.jpg",
-  "/images/gallery/gallery-3.jpg",
-  "/images/gallery/gallery-4.jpg",
-  "/images/gallery/gallery-5.jpg",
-  "/images/gallery/gallery-6.jpg",
+  {
+    src: "/images/gallery/gallery-1.jpg",
+    alt: "Olga Koshkina medical tattoo work",
+  },
+  {
+    src: "/images/gallery/gallery-2.jpg",
+    alt: "Olga Koshkina permanent makeup work",
+  },
+  {
+    src: "/images/gallery/gallery-3.jpg",
+    alt: "Olga Koshkina beauty treatment",
+  },
+  {
+    src: "/images/gallery/gallery-4.jpg",
+    alt: "Olga Koshkina permanent makeup result",
+  },
+  {
+    src: "/images/gallery/gallery-5.jpg",
+    alt: "Olga Koshkina medical tattoo work",
+  },
+  {
+    src: "/images/gallery/gallery-6.jpg",
+    alt: "Olga Koshkina permanent makeup result",
+  },
 ];
 
 export default function Gallery() {
   const [index, setIndex] = useState(-1);
+  const { t } = useLanguage();
 
   return (
-    <section id="gallery" className="bg-[#FAF7F2] py-32">
+    <section
+      id="gallery"
+      className="w-full bg-[#FAF7F2] py-24 lg:py-32"
+    >
       <div className="container">
 
-        <div className="max-w-2xl mb-20">
+        {/* HEADER */}
 
-          <span className="uppercase tracking-[0.35em] text-sm text-[#B08D87]">
-            GALLERY
+        <div className="mx-auto mb-14 w-full max-w-3xl text-center lg:mb-20">
+
+          <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
+            {t.gallery.eyebrow}
           </span>
 
-          <h2 className="mt-5 text-6xl font-serif text-[#2D2A26]">
-            Our Work
+          <h2 className="mt-5 font-serif text-5xl leading-tight text-[#2D2A26] lg:text-6xl">
+            {t.gallery.title}
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-[#6A635E]">
-            Click any image to view it in full screen.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#6A635E] lg:text-lg">
+            {t.gallery.description}
           </p>
 
         </div>
 
-        <div className="columns-1 md:columns-2 xl:columns-3 gap-8 space-y-8">
+        {/* GALLERY */}
+
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
 
           {images.map((image, i) => (
-
-            <div
-              key={i}
+            <button
+              key={image.src}
+              type="button"
               onClick={() => setIndex(i)}
-              className="cursor-pointer overflow-hidden rounded-[32px]"
+              aria-label={`${t.gallery.view} ${i + 1}`}
+              className="group relative block w-full overflow-hidden rounded-[24px] bg-[#EDE5DE] text-left focus:outline-none focus:ring-2 focus:ring-[#B08D87] focus:ring-offset-4 lg:rounded-[32px]"
             >
 
-              <Image
-                src={image}
-                alt=""
-                width={700}
-                height={900}
-                className="w-full object-cover hover:scale-105 transition duration-500"
-              />
+              <div className="relative w-full overflow-hidden aspect-[4/5]">
 
-            </div>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={800}
+                  height={1000}
+                  sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 400px"
+                  className="block h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
 
+                {/* HOVER OVERLAY */}
+
+                <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/20" />
+
+                {/* VIEW BUTTON */}
+
+                <div className="absolute inset-0 flex items-center justify-center">
+
+                  <span className="translate-y-3 rounded-full bg-white/90 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.18em] text-[#2D2A26] opacity-0 shadow-lg backdrop-blur transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    {t.gallery.view}
+                  </span>
+
+                </div>
+
+              </div>
+
+            </button>
           ))}
 
         </div>
+
+        {/* INSTAGRAM */}
+
+        <div className="mt-12 text-center">
+
+          <p className="text-sm leading-6 text-[#8A817B]">
+            {t.gallery.instagram}
+          </p>
+
+          <a
+            href="https://www.instagram.com/olga_pmu_tj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex rounded-full border border-[#C5A7A3] px-6 py-3 text-sm font-medium text-[#4F4945] transition hover:bg-[#C5A7A3] hover:text-white"
+          >
+            {t.gallery.follow}
+          </a>
+
+        </div>
+
+        {/* LIGHTBOX */}
 
         <Lightbox
           open={index >= 0}
           close={() => setIndex(-1)}
           index={index}
-          slides={images.map((src) => ({ src }))}
+          slides={images.map((image) => ({
+            src: image.src,
+          }))}
         />
 
       </div>

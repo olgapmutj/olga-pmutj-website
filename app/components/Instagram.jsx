@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "../context/LanguageContext";
 
 const posts = [
   "/images/gallery/gallery-1.jpg",
@@ -10,53 +13,83 @@ const posts = [
 ];
 
 export default function Instagram() {
+  const { t } = useLanguage();
+
   return (
-    <section className="bg-white py-32">
+    <section
+      id="instagram"
+      className="w-full overflow-hidden bg-white py-24 lg:py-32"
+    >
       <div className="container">
 
-        <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
+        {/* HEADER */}
 
-          <div>
+        <div className="mx-auto mb-14 flex w-full max-w-6xl flex-col items-start justify-between gap-8 lg:mb-16 lg:flex-row lg:items-end">
 
-            <span className="uppercase tracking-[0.35em] text-sm text-[#B08D87]">
-              INSTAGRAM
+          <div className="max-w-2xl">
+
+            <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
+              {t.instagram.eyebrow}
             </span>
 
-            <h2 className="mt-5 font-serif text-6xl text-[#2D2A26]">
-              Follow Our Journey
+            <h2 className="mt-5 font-serif text-5xl leading-tight text-[#2D2A26] lg:text-6xl">
+              {t.instagram.title}
             </h2>
+
+            <p className="mt-5 max-w-xl text-base leading-8 text-[#6A635E] lg:text-lg">
+              {t.instagram.description}
+            </p>
 
           </div>
 
           <a
-            href="https://instagram.com/olgapmutj"
+            href="https://www.instagram.com/olga_pmu_tj/"
             target="_blank"
-            className="btn-primary"
+            rel="noopener noreferrer"
+            className="btn-primary shrink-0"
           >
-            @olgapmutj
+            {t.instagram.follow}
           </a>
 
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* INSTAGRAM GRID */}
+
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
 
           {posts.map((image, index) => (
-
-            <div
-              key={index}
-              className="overflow-hidden rounded-[28px]"
+            <a
+              key={image}
+              href="https://www.instagram.com/olga_pmu_tj/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block w-full overflow-hidden rounded-[24px] bg-[#EDE5DE] lg:rounded-[30px]"
             >
 
-              <Image
-                src={image}
-                alt=""
-                width={600}
-                height={600}
-                className="w-full aspect-square object-cover hover:scale-105 transition duration-500"
-              />
+              <div className="relative aspect-square w-full overflow-hidden">
 
-            </div>
+                <Image
+                  src={image}
+                  alt={`Olga PMU TJ Instagram ${index + 1}`}
+                  width={800}
+                  height={800}
+                  sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 400px"
+                  className="block h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
 
+                <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/20" />
+
+                <div className="absolute inset-0 flex items-center justify-center">
+
+                  <span className="translate-y-3 rounded-full bg-white/90 px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#2D2A26] opacity-0 shadow-lg backdrop-blur transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    {t.instagram.view}
+                  </span>
+
+                </div>
+
+              </div>
+
+            </a>
           ))}
 
         </div>

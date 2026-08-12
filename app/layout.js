@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://olgapmutj.com"),
 
-  title: "Olga PMU TJ | Medical Tattoo & Permanent Makeup | Tijuana",
+  title: "Olga Koshkina | Medical Tattoo & Permanent Makeup | Tijuana",
 
   description:
     "Premium paramedical tattoo studio in Tijuana specializing in 3D Areola Restoration, Scar Camouflage, Stretch Mark Camouflage and Permanent Makeup.",
@@ -30,17 +31,17 @@ export const metadata = {
     "PMU",
   ],
 
-  authors: [{ name: "Olga PMU TJ" }],
+  authors: [{ name: "Olga Koshkina" }],
 
   openGraph: {
-    title: "Olga PMU TJ",
+    title: "Olga Koshkina | Medical Tattoo & Permanent Makeup",
 
     description:
       "Premium Medical Tattoo & Permanent Makeup Studio in Tijuana.",
 
     url: "https://olgapmutj.com",
 
-    siteName: "Olga PMU TJ",
+    siteName: "Olga Koshkina",
 
     images: [
       {
@@ -51,7 +52,6 @@ export const metadata = {
     ],
 
     locale: "en_US",
-
     type: "website",
   },
 
@@ -63,13 +63,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
-
     </html>
   );
 }

@@ -1,87 +1,93 @@
-import Image from "next/image";
+"use client";
+
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-[#FAF7F2] pt-40 pb-28">
-      <div className="container">
+  const { t } = useLanguage();
 
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+  return (
+    <section className="w-full overflow-hidden bg-[#FAF7F2]">
+
+      <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 lg:px-8 lg:pb-32 lg:pt-40">
+
+        <div className="grid w-full items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
           {/* LEFT */}
 
-          <div className="max-w-xl">
+          <div className="min-w-0">
 
-            <span className="inline-block rounded-full bg-[#EAD8D3] px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#8E6F69]">
-              OLGA KOSHKINA
+            <span className="text-[8px] font-semibold uppercase tracking-[0.25em] text-[#B08D87] sm:text-xs sm:tracking-[0.35em]">
+              {t.hero.eyebrow}
             </span>
 
-            <h1 className="mt-8 font-serif text-6xl leading-[0.92] text-[#2D2A26] lg:text-8xl">
-              Medical Tattoo
+            <h1 className="mt-3 max-w-full font-serif text-[30px] leading-[0.98] tracking-[-0.035em] text-[#2D2A26] sm:text-5xl lg:text-7xl xl:text-[82px]">
+              {t.hero.title}
               <br />
-              & Permanent
-              <br />
-              Makeup
+              <span className="text-[#B08D87]">
+                {t.hero.titleAccent}
+              </span>
             </h1>
 
-            <p className="mt-8 text-xl leading-9 text-[#6A635E]">
-              Olga Koshkina specializes in advanced medical tattooing,
-              including 3D Areola Restoration, Scar Camouflage,
-              Stretch Mark Camouflage and Permanent Makeup with elegant,
-              natural-looking results.
+            <p className="mt-5 max-w-xl text-[13px] leading-6 text-[#6A635E] sm:text-base sm:leading-8 lg:mt-8 lg:text-lg">
+              {t.hero.description}
             </p>
 
-            <div className="mt-12 flex flex-wrap gap-5">
+            {/* BUTTONS */}
+
+            <div className="mt-6 flex flex-wrap gap-3 sm:mt-10">
 
               <a
                 href="#contact"
-                className="btn-primary"
+                className="btn-primary px-6 py-3 text-[12px] sm:px-8 sm:py-4 sm:text-sm"
               >
-                Schedule Consultation
+                {t.hero.primary}
               </a>
 
               <a
-                href="#gallery"
-                className="btn-secondary"
+                href="#services"
+                className="btn-secondary px-6 py-3 text-[12px] sm:px-8 sm:py-4 sm:text-sm"
               >
-                View Results
+                {t.hero.secondary}
               </a>
 
             </div>
 
-            <div className="mt-20 grid grid-cols-3 gap-8">
+            {/* STATS */}
 
-              <div>
+            <div className="mt-8 grid grid-cols-3 gap-2 border-t border-[#E8DED8] pt-5 sm:mt-12 sm:gap-8 sm:pt-6">
 
-                <h3 className="font-serif text-5xl text-[#B08D87]">
+              <div className="min-w-0">
+
+                <p className="font-serif text-[26px] leading-none text-[#B08D87] sm:text-3xl">
                   8+
-                </h3>
+                </p>
 
-                <p className="mt-2 text-sm text-[#6A635E]">
-                  Years Experience
+                <p className="mt-1.5 text-[7px] uppercase leading-4 tracking-[0.08em] text-[#6A635E] sm:text-xs sm:tracking-wider">
+                  {t.hero.experience}
                 </p>
 
               </div>
 
-              <div>
+              <div className="min-w-0">
 
-                <h3 className="font-serif text-5xl text-[#B08D87]">
+                <p className="font-serif text-[26px] leading-none text-[#B08D87] sm:text-3xl">
                   1000+
-                </h3>
+                </p>
 
-                <p className="mt-2 text-sm text-[#6A635E]">
-                  Procedures
+                <p className="mt-1.5 text-[7px] uppercase leading-4 tracking-[0.08em] text-[#6A635E] sm:text-xs sm:tracking-wider">
+                  {t.hero.procedures}
                 </p>
 
               </div>
 
-              <div>
+              <div className="min-w-0">
 
-                <h3 className="font-serif text-5xl text-[#B08D87]">
-                  ★★★★★
-                </h3>
+                <p className="font-serif text-[20px] leading-none text-[#B08D87] sm:text-3xl">
+                  Tijuana
+                </p>
 
-                <p className="mt-2 text-sm text-[#6A635E]">
-                  Client Satisfaction
+                <p className="mt-1.5 text-[7px] uppercase leading-4 tracking-[0.08em] text-[#6A635E] sm:text-xs sm:tracking-wider">
+                  {t.hero.location}
                 </p>
 
               </div>
@@ -90,26 +96,42 @@ export default function Hero() {
 
           </div>
 
-          {/* RIGHT */}
+          {/* VIDEO */}
 
-          <div className="relative">
+          <div className="relative mt-2 w-full min-w-0 lg:mt-0">
 
-            <div className="absolute -right-8 -bottom-8 h-full w-full rounded-[48px] bg-[#E7D4CF]" />
+            <div className="absolute -bottom-3 -left-3 h-full w-full rounded-[26px] bg-[#E7D4CF] sm:-bottom-6 sm:-left-6 sm:rounded-[42px]" />
 
-            <Image
-              src="/images/hero/olga-hero.jpg"
-              alt="Olga Koshkina"
-              width={780}
-              height={980}
-              priority
-              className="relative h-[760px] w-full rounded-[48px] object-cover shadow-2xl"
-            />
+            <div className="relative w-full overflow-hidden rounded-[26px] shadow-2xl sm:rounded-[42px]">
+
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="h-[360px] w-full object-cover sm:h-[560px] lg:h-[720px]"
+              >
+                <source
+                  src="/videos/hero/hero-01.mp4"
+                  type="video/mp4"
+                />
+              </video>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+
+              <div className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1.5 text-[7px] font-medium uppercase tracking-[0.12em] text-[#4F4945] backdrop-blur sm:bottom-6 sm:left-6 sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.18em]">
+                {t.hero.badge}
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
       </div>
+
     </section>
   );
 }

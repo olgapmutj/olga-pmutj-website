@@ -1,27 +1,42 @@
+"use client";
+
+import { useLanguage } from "../context/LanguageContext";
+
 export default function Map() {
+  const { t } = useLanguage();
+
   return (
-    <section className="bg-[#FAF7F2] py-24">
+    <section
+      id="location"
+      className="w-full overflow-hidden bg-[#FAF7F2] py-24 lg:py-36"
+    >
       <div className="container">
 
-        <div className="text-center mb-14">
+        {/* HEADER */}
 
-          <span className="uppercase tracking-[0.35em] text-sm text-[#B08D87]">
-            LOCATION
+        <div className="mx-auto mb-12 max-w-3xl text-center lg:mb-14">
+
+          <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B08D87]">
+            {t.map.eyebrow}
           </span>
 
-          <h2 className="mt-5 font-serif text-5xl text-[#2D2A26]">
-            Visit Our Studio
+          <h2 className="mt-5 font-serif text-5xl text-[#2D2A26] lg:text-6xl">
+            {t.map.title}
           </h2>
 
-          <p className="mt-6 text-lg text-[#6A635E]">
-            Parque Baja California Sur 478<br />
-            Playas de Tijuana<br />
+          <p className="mt-6 text-base leading-8 text-[#6A635E] lg:text-lg">
+            Parque Baja California Sur 478
+            <br />
+            Playas de Tijuana
+            <br />
             22506 Tijuana, Baja California, México
           </p>
 
         </div>
 
-        <div className="overflow-hidden rounded-[36px] shadow-2xl">
+        {/* MAP */}
+
+        <div className="overflow-hidden rounded-[30px] bg-white shadow-2xl lg:rounded-[36px]">
 
           <iframe
             src="https://www.google.com/maps?q=Parque+Baja+California+Sur+478,+Playas+de+Tijuana,+22506,+Tijuana,+BC&output=embed"
@@ -30,8 +45,24 @@ export default function Map() {
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
-            className="border-0"
+            className="block w-full border-0"
+            title="Olga Koshkina Studio Location"
           />
+
+        </div>
+
+        {/* GOOGLE MAPS BUTTON */}
+
+        <div className="mt-8 text-center">
+
+          <a
+            href="https://maps.app.goo.gl/dup7ko52LydrgqcC7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary inline-flex"
+          >
+            {t.map.button}
+          </a>
 
         </div>
 
