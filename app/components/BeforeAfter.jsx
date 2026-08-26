@@ -17,7 +17,8 @@ export default function BeforeAfter() {
             "Custom pigment selection",
             "Natural-looking results",
           ],
-          alt: "Before treatment",
+          beforeAlt: "Before treatment",
+          afterAlt: "After treatment",
         }
       : {
           button: "Hablar sobre tu Tratamiento",
@@ -28,7 +29,8 @@ export default function BeforeAfter() {
             "Selección personalizada de pigmentos",
             "Resultados de apariencia natural",
           ],
-          alt: "Antes del tratamiento",
+          beforeAlt: "Antes del tratamiento",
+          afterAlt: "Después del tratamiento",
         };
 
   return (
@@ -60,71 +62,100 @@ export default function BeforeAfter() {
 
         </div>
 
-        {/* FEATURED RESULT */}
+        {/* BEFORE / AFTER */}
 
         <div className="mx-auto mt-14 w-full max-w-6xl lg:mt-16">
 
-          <div className="grid w-full overflow-hidden rounded-[32px] bg-[#F8F4F0] shadow-xl lg:grid-cols-2 lg:rounded-[38px]">
+          <div className="grid gap-5 sm:grid-cols-2">
 
-            {/* IMAGE */}
+            {/* BEFORE */}
 
-            <div className="relative min-h-[420px] w-full lg:min-h-[560px]">
+            <div className="relative overflow-hidden rounded-[28px] bg-[#F8F4F0] shadow-lg">
 
-              <Image
-                src="/images/before-after/ba-1-before.jpg"
-                alt={content.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                priority={false}
-              />
+              <div className="relative aspect-[4/5] w-full">
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                <Image
+                  src="/images/before-after/ba-1-before.jpg"
+                  alt={content.beforeAlt}
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
+                />
 
-              <div className="absolute bottom-6 left-6 rounded-full bg-white/90 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#4F4945] shadow-sm backdrop-blur">
+              </div>
+
+              <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#4F4945] shadow-sm backdrop-blur">
                 {t.beforeAfter.before}
               </div>
 
             </div>
 
-            {/* CONTENT */}
+            {/* AFTER */}
 
-            <div className="flex min-w-0 flex-col justify-center p-8 sm:p-10 lg:p-16">
+            <div className="relative overflow-hidden rounded-[28px] bg-[#F8F4F0] shadow-lg">
 
-              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B08D87]">
-                {t.beforeAfter.natural}
-              </span>
+              <div className="relative aspect-[4/5] w-full">
 
-              <h3 className="mt-5 font-serif text-4xl leading-[1.08] text-[#2D2A26] lg:text-5xl">
-                {t.beforeAfter.heading}
-              </h3>
-
-              <p className="mt-6 text-base leading-8 text-[#6A635E] lg:text-lg">
-                {content.paragraph}
-              </p>
-
-              <div className="mt-8 space-y-4 text-sm text-[#4F4945]">
-
-                {content.points.map((point) => (
-                  <div
-                    key={point}
-                    className="flex items-center gap-3"
-                  >
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#B08D87]" />
-                    <span>{point}</span>
-                  </div>
-                ))}
+                <Image
+                  src="/images/before-after/ba-1-after.jpg"
+                  alt={content.afterAlt}
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
+                />
 
               </div>
 
-              <a
-                href="#contact"
-                className="btn-primary mt-10 inline-flex w-fit"
-              >
-                {content.button}
-              </a>
+              <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#4F4945] shadow-sm backdrop-blur">
+                {t.beforeAfter.after}
+              </div>
 
             </div>
+
+          </div>
+
+          {/* DESCRIPTION */}
+
+          <div className="mx-auto mt-12 max-w-4xl text-center lg:mt-16">
+
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B08D87]">
+              {t.beforeAfter.natural}
+            </span>
+
+            <h3 className="mt-5 font-serif text-4xl leading-[1.08] text-[#2D2A26] lg:text-5xl">
+              {t.beforeAfter.heading}
+            </h3>
+
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#6A635E] lg:text-lg">
+              {content.paragraph}
+            </p>
+
+            {/* POINTS */}
+
+            <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-[#4F4945]">
+
+              {content.points.map((point) => (
+                <div
+                  key={point}
+                  className="flex items-center gap-3"
+                >
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#B08D87]" />
+                  <span>{point}</span>
+                </div>
+              ))}
+
+            </div>
+
+            {/* CTA */}
+
+            <a
+              href="#contact"
+              className="btn-primary mt-10 inline-flex"
+            >
+              {content.button}
+            </a>
 
           </div>
 

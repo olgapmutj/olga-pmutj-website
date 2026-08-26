@@ -21,15 +21,19 @@ const images = [
   },
   {
     src: "/images/gallery/gallery-4.jpg",
-    alt: "Olga Koshkina permanent makeup result",
+    alt: "Olga Koshkina treatment result",
   },
   {
     src: "/images/gallery/gallery-5.jpg",
-    alt: "Olga Koshkina medical tattoo work",
+    alt: "Olga Koshkina professional work",
   },
   {
     src: "/images/gallery/gallery-6.jpg",
     alt: "Olga Koshkina permanent makeup result",
+  },
+  {
+    src: "/images/gallery/gallery-7.jpg",
+    alt: "Olga Koshkina medical tattoo and permanent makeup",
   },
 ];
 
@@ -75,22 +79,17 @@ export default function Gallery() {
               className="group relative block w-full overflow-hidden rounded-[24px] bg-[#EDE5DE] text-left focus:outline-none focus:ring-2 focus:ring-[#B08D87] focus:ring-offset-4 lg:rounded-[32px]"
             >
 
-              <div className="relative w-full overflow-hidden aspect-[4/5]">
+              <div className="relative aspect-[4/5] w-full overflow-hidden">
 
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={800}
-                  height={1000}
+                  fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 400px"
-                  className="block h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  className="object-cover transition duration-700 group-hover:scale-105"
                 />
 
-                {/* HOVER OVERLAY */}
-
                 <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/20" />
-
-                {/* VIEW BUTTON */}
 
                 <div className="absolute inset-0 flex items-center justify-center">
 

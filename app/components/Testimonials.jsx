@@ -41,14 +41,16 @@ const reviews = [
   {
     name: "LCC. Yuliana Gonzalez",
     location: "Tijuana, B.C.",
-    treatment: "Pigmentación",
+    treatment: "Pigmentaci\u00f3n",
     review:
-      "Me encanto el diseño y el detalle de su trabajo. La calidad de la pigmentación genial. Ya tiene vida mi rostro 🫶🏻🫶🏻🫶🏻",
+      "Me encanto el dise\u00f1o y el detalle de su trabajo. La calidad de la pigmentaci\u00f3n genial. Ya tiene vida mi rostro.",
   },
 ];
 
+const stars = "\u2605\u2605\u2605\u2605\u2605";
+
 export default function Testimonials() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -77,13 +79,17 @@ export default function Testimonials() {
 
           <div className="mx-auto mt-7 inline-flex max-w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-3.5 shadow-sm sm:gap-4 sm:px-6 sm:py-4">
 
-            <div className="flex shrink-0 items-center gap-0.5 text-lg tracking-wide text-[#D7B55A] sm:text-xl">
-              ★★★★★
+            <div
+              className="flex shrink-0 items-center gap-0.5 text-lg tracking-wide text-[#D7B55A] sm:text-xl"
+              aria-label="5 star rating"
+            >
+              {stars}
             </div>
 
             <div className="h-5 w-px bg-[#E8DED8]" />
 
             <div className="text-left">
+
               <p className="text-xs font-semibold text-[#2D2A26] sm:text-sm">
                 {t.reviews.rating}
               </p>
@@ -91,6 +97,7 @@ export default function Testimonials() {
               <p className="mt-0.5 text-[10px] text-[#6A635E] sm:text-xs">
                 {t.reviews.based}
               </p>
+
             </div>
 
           </div>
@@ -109,8 +116,11 @@ export default function Testimonials() {
 
               {/* STARS */}
 
-              <div className="text-lg tracking-[0.1em] text-[#D7B55A] sm:text-xl">
-                ★★★★★
+              <div
+                className="text-lg tracking-[0.1em] text-[#D7B55A] sm:text-xl"
+                aria-label="5 star rating"
+              >
+                {stars}
               </div>
 
               {/* REVIEW */}

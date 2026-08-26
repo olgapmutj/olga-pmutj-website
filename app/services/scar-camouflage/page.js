@@ -25,15 +25,11 @@ export const metadata = {
 
   openGraph: {
     title: "Scar Camouflage Tijuana | Olga Koshkina",
-
     description:
       "Personalized paramedical tattooing designed to visually blend scar tissue with surrounding skin.",
-
     url:
       "https://olga-pmutj-website.vercel.app/services/scar-camouflage",
-
     siteName: "Olga Koshkina",
-
     images: [
       {
         url: "/images/working/olga-working-03.jpg",
@@ -42,7 +38,6 @@ export const metadata = {
         alt: "Olga Koshkina performing paramedical tattooing",
       },
     ],
-
     locale: "en_US",
     type: "website",
   },
@@ -99,6 +94,27 @@ const faqs = [
   },
 ];
 
+const otherServices = [
+  {
+    title: "3D Areola Restoration",
+    description:
+      "Specialized paramedical pigmentation designed to recreate the visual appearance of a natural areola with dimension and carefully matched tones.",
+    href: "/services/areola-restoration",
+  },
+  {
+    title: "Vitiligo Camouflage",
+    description:
+      "Personalized pigmentation techniques designed to visually blend areas of pigment loss with surrounding skin.",
+    href: "/services/vitiligo-camouflage",
+  },
+  {
+    title: "Medical Tattoo",
+    description:
+      "Explore Olga's complete range of advanced paramedical tattooing and restorative services.",
+    href: "/services/medical-tattoo",
+  },
+];
+
 export default function ScarCamouflagePage() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -137,7 +153,7 @@ export default function ScarCamouflagePage() {
 
             <Link
               href="/"
-              className="font-serif text-xl tracking-[-0.02em]"
+              className="font-serif text-xl tracking-[-0.02em] text-[#2D2A26]"
             >
               Olga Koshkina
             </Link>
@@ -188,14 +204,14 @@ export default function ScarCamouflagePage() {
                     href="https://wa.me/526641350986"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#B08D87] px-7 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#96716B]"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#B08D87] px-7 text-sm font-medium !text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#96716B]"
                   >
                     Schedule a Consultation
                   </a>
 
                   <Link
                     href="/services/medical-tattoo"
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D8C9C3] px-7 text-sm font-medium text-[#4F4945] transition duration-300 hover:border-[#B08D87] hover:bg-white"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#D8C9C3] bg-transparent px-7 text-sm font-medium !text-[#4F4945] transition duration-300 hover:border-[#B08D87] hover:bg-white"
                   >
                     Medical Tattoo
                   </Link>
@@ -448,6 +464,57 @@ export default function ScarCamouflagePage() {
           </div>
         </section>
 
+        {/* OTHER SERVICES */}
+
+        <section className="w-full bg-[#FAF7F2] py-20 sm:py-24 lg:py-28">
+
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10">
+
+            <div className="mx-auto max-w-3xl text-center">
+
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#B08D87]">
+                Explore More Services
+              </p>
+
+              <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                Continue exploring
+                <span className="text-[#B08D87]">
+                  {" "}
+                  Olga's work.
+                </span>
+              </h2>
+
+            </div>
+
+            <div className="mt-12 grid w-full grid-cols-1 gap-5 md:grid-cols-3">
+
+              {otherServices.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group rounded-[28px] border border-[#E8DED8] bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-8"
+                >
+
+                  <h3 className="font-serif text-2xl text-[#2D2A26] transition group-hover:text-[#B08D87]">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-[#6D6662]">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-6 text-sm font-medium text-[#B08D87]">
+                    Learn More →
+                  </div>
+
+                </Link>
+              ))}
+
+            </div>
+
+          </div>
+        </section>
+
         {/* CTA */}
 
         <section
@@ -474,22 +541,25 @@ export default function ScarCamouflagePage() {
               situation.
             </p>
 
-            <div className="mt-9">
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
 
               <a
                 href="https://wa.me/526641350986"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-[#B08D87] px-9 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#C5A7A3]"
+                className="inline-flex min-h-[54px] w-full items-center justify-center rounded-full bg-[#B08D87] px-9 text-sm font-medium !text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#C5A7A3] sm:w-auto"
               >
                 Contact Olga on WhatsApp
               </a>
 
-            </div>
+              <Link
+                href="/services/medical-tattoo"
+                className="inline-flex min-h-[54px] w-full items-center justify-center rounded-full border border-white/40 bg-transparent px-9 text-sm font-medium !text-white transition duration-300 hover:border-white hover:bg-white/10 sm:w-auto"
+              >
+                View Medical Tattoo
+              </Link>
 
-            <p className="mt-7 text-xs uppercase tracking-[0.18em] text-white/40">
-              Tijuana, Baja California, Mexico
-            </p>
+            </div>
 
           </div>
         </section>

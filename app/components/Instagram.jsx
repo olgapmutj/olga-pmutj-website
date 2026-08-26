@@ -10,6 +10,7 @@ const posts = [
   "/images/gallery/gallery-4.jpg",
   "/images/gallery/gallery-5.jpg",
   "/images/gallery/gallery-6.jpg",
+  "/images/gallery/gallery-7.jpg",
 ];
 
 export default function Instagram() {
@@ -70,11 +71,10 @@ export default function Instagram() {
 
                 <Image
                   src={image}
-                  alt={`Olga PMU TJ Instagram ${index + 1}`}
-                  width={800}
-                  height={800}
+                  alt={`Olga Koshkina Instagram ${index + 1}`}
+                  fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 400px"
-                  className="block h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  className="object-cover transition duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/20" />

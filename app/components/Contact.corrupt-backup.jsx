@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
@@ -14,6 +14,8 @@ export default function Contact() {
     message: "",
   });
 
+  const isSpanish = language === "es";
+
   const content = {
     en: {
       service: "Medical Tattoo & Permanent Makeup",
@@ -22,6 +24,7 @@ export default function Contact() {
       phone: "Phone",
       treatment: "Select a treatment",
       message: "Tell us about the treatment you are interested in...",
+
       treatments: [
         "3D Areola Restoration",
         "Scar Camouflage",
@@ -31,13 +34,18 @@ export default function Contact() {
         "PMU Removal",
         "Other",
       ],
+
       continue: "Continue on WhatsApp",
       whatsapp: "WhatsApp Olga",
       directions: "Get Directions",
+
       notProvided: "Not provided",
       recommendation: "I would like your recommendation",
       noMessage: "No additional message.",
-      intro: "Hello Olga!\n\nI would like to schedule a consultation.",
+
+      intro:
+        "Hello Olga!\n\nI would like to schedule a consultation.",
+
       labelName: "Name",
       labelEmail: "Email",
       labelPhone: "Phone",
@@ -52,6 +60,7 @@ export default function Contact() {
       phone: "Teléfono",
       treatment: "Selecciona un tratamiento",
       message: "Cuéntanos sobre el tratamiento que te interesa...",
+
       treatments: [
         "Restauración de Areola 3D",
         "Camuflaje de Cicatrices",
@@ -61,13 +70,18 @@ export default function Contact() {
         "Eliminación de PMU",
         "Otro",
       ],
+
       continue: "Continuar en WhatsApp",
       whatsapp: "WhatsApp Olga",
       directions: "Cómo llegar",
+
       notProvided: "No proporcionado",
       recommendation: "Me gustaría recibir una recomendación",
       noMessage: "Sin mensaje adicional.",
-      intro: "¡Hola Olga!\n\nMe gustaría agendar una consulta.",
+
+      intro:
+        "¡Hola Olga!\n\nMe gustaría agendar una consulta.",
+
       labelName: "Nombre",
       labelEmail: "Correo",
       labelPhone: "Teléfono",
@@ -88,7 +102,10 @@ export default function Contact() {
   }
 
   function trackWhatsAppClick(buttonName, extraData = {}) {
-    if (typeof window !== "undefined" && window.gtag) {
+    if (
+      typeof window !== "undefined" &&
+      window.gtag
+    ) {
       window.gtag("event", "whatsapp_click", {
         button_name: buttonName,
         link_url: "https://wa.me/526641350986",
@@ -104,22 +121,32 @@ export default function Contact() {
 
     const message =
       `${current.intro}\n\n` +
-      `${current.labelName}: ${form.name || current.notProvided}\n` +
-      `${current.labelEmail}: ${form.email || current.notProvided}\n` +
-      `${current.labelPhone}: ${form.phone || current.notProvided}\n` +
+      `${current.labelName}: ${
+        form.name || current.notProvided
+      }\n` +
+      `${current.labelEmail}: ${
+        form.email || current.notProvided
+      }\n` +
+      `${current.labelPhone}: ${
+        form.phone || current.notProvided
+      }\n` +
       `${current.labelTreatment}: ${treatment}\n\n` +
-      `${current.labelMessage}:\n${form.message || current.noMessage}`;
+      `${current.labelMessage}:\n${
+        form.message || current.noMessage
+      }`;
 
     const whatsappUrl =
       "https://wa.me/526641350986?text=" +
       encodeURIComponent(message);
 
-    trackWhatsAppClick("Contact Form", { treatment });
+    trackWhatsAppClick("Contact Form", {
+      treatment,
+    });
 
     window.location.href = whatsappUrl;
   }
 
-  const directMessage = language === "es"
+  const directMessage = isSpanish
     ? "¡Hola Olga! Me gustaría conocer más sobre tus servicios."
     : "Hello Olga! I'd like to learn more about your services.";
 
@@ -127,13 +154,21 @@ export default function Contact() {
     "https://wa.me/526641350986?text=" +
     encodeURIComponent(directMessage);
 
-  const consultationMessage = language === "es"
+  const consultationMessage = isSpanish
     ? "¡Hola Olga! Me gustaría agendar una consulta."
     : "Hello Olga! I'd like to schedule a consultation.";
 
   const consultationWhatsApp =
     "https://wa.me/526641350986?text=" +
     encodeURIComponent(consultationMessage);
+
+  function handleDirectWhatsAppClick() {
+    trackWhatsAppClick("Contact WhatsApp");
+  }
+
+  function handleConsultationClick() {
+    trackWhatsAppClick("Contact Consultation");
+  }
 
   return (
     <section
@@ -161,7 +196,7 @@ export default function Contact() {
             <div className="mt-8 space-y-6 sm:mt-10 sm:space-y-7 lg:mt-12 lg:space-y-8">
 
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#B08D87] sm:text-xs">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#B08D87] sm:text-xs sm:tracking-[0.25em]">
                   {t.contact.studio}
                 </p>
 
@@ -175,7 +210,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#B08D87] sm:text-xs">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#B08D87] sm:text-xs sm:tracking-[0.25em]">
                   {t.contact.location}
                 </p>
 
@@ -199,6 +234,7 @@ export default function Contact() {
                   href={directWhatsApp}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleDirectWhatsAppClick}
                   className="mt-2 inline-block text-base text-[#B08D87] sm:text-lg"
                 >
                   +52 664 135 0986
@@ -213,6 +249,7 @@ export default function Contact() {
                 href={consultationWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleConsultationClick}
                 className="btn-primary inline-flex w-full justify-center sm:w-auto"
               >
                 {current.whatsapp}

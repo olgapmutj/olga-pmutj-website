@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import {
   createContext,
@@ -25,16 +25,16 @@ const translations = {
 
     hero: {
       eyebrow: "Olga Koshkina",
-      title: "Paramedical Tattoo",
+      title: "Medical Tattoo",
       titleAccent: "& Permanent Makeup",
       description:
-        "Specialized medical tattooing and permanent makeup focused on natural-looking results, personalized care, and restoring confidence.",
+        "Advanced medical tattooing and permanent makeup designed to restore confidence and create natural, elegant results.",
       primary: "Schedule Consultation",
       secondary: "Explore Services",
       experience: "Years Experience",
       procedures: "Procedures",
       location: "Baja California",
-      badge: "Paramedical Tattoo Specialist",
+      badge: "Medical Tattoo Specialist",
     },
 
     services: {
@@ -140,16 +140,16 @@ const translations = {
 
     hero: {
       eyebrow: "Olga Koshkina",
-      title: "Tatuaje Paramédico",
+      title: "Tatuaje Médico",
       titleAccent: "y Maquillaje Permanente",
       description:
-        "Tatuaje médico y maquillaje permanente especializados, enfocados en resultados naturales, atención personalizada y recuperar la confianza.",
+        "Tatuaje médico avanzado y maquillaje permanente diseñados para restaurar la confianza y crear resultados naturales y elegantes.",
       primary: "Agendar Consulta",
       secondary: "Ver Servicios",
       experience: "Años de Experiencia",
       procedures: "Procedimientos",
       location: "Baja California",
-      badge: "Especialista en Tatuaje Paramédico",
+      badge: "Especialista en Tatuaje Médico",
     },
 
     services: {
@@ -170,12 +170,16 @@ const translations = {
       before: "Antes",
       after: "Después",
       natural: "Resultados Naturales",
-      heading: "Restaurando la confianza a través de la precisión.",
+      heading:
+        "Restaurando la confianza a través de la precisión.",
       descriptionLong:
         "Cada procedimiento comienza con una evaluación cuidadosa, selección personalizada del color y una técnica precisa diseñada para cada cliente.",
-      personalizedPlan: "Plan de tratamiento personalizado",
-      customPigment: "Selección personalizada de pigmentos",
-      naturalResults: "Resultados de apariencia natural",
+      personalizedPlan:
+        "Plan de tratamiento personalizado",
+      customPigment:
+        "Selección personalizada de pigmentos",
+      naturalResults:
+        "Resultados de apariencia natural",
       button: "Hablar sobre tu Tratamiento",
     },
 
@@ -242,6 +246,7 @@ const translations = {
 };
 
 export function LanguageProvider({ children }) {
+  // IMPORTANTE:
   // El servidor y el primer render del navegador empiezan
   // exactamente con el mismo idioma para evitar hydration errors.
   const [language, setLanguageState] = useState("en");
